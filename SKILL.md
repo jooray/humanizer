@@ -1,6 +1,6 @@
 ---
 name: humanizer
-version: 2.2.0
+version: 2.3.0
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
@@ -208,7 +208,19 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 11. Elegant Variation (Synonym Cycling)
+### 11. Staccato Contrast Pattern (The "Not X" Pattern)
+
+**Problem:** LLMs overuse a specific rhythmic contrast pattern: "[Subject]. Not [Alternative 1]. Not [Alternative 2]." While occasionally effective in human writing, its extreme frequency in AI outputs makes it a high-confidence signal of slop.
+
+**Before:**
+> SimpleX. Not Telegram. Not WhatsApp. Not Facebook. It's a different way to communicate.
+
+**After:**
+> SimpleX takes a different approach to privacy than Telegram or WhatsApp.
+
+---
+
+### 12. Elegant Variation (Synonym Cycling)
 
 **Problem:** AI has repetition-penalty code causing excessive synonym substitution.
 
@@ -220,7 +232,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 12. False Ranges
+### 13. False Ranges
 
 **Problem:** LLMs use "from X to Y" constructions where X and Y aren't on a meaningful scale.
 
@@ -234,7 +246,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ## STYLE PATTERNS
 
-### 13. Em Dash Overuse
+### 14. Em Dash Overuse
 
 **Problem:** LLMs use em dashes (—) more than humans, mimicking "punchy" sales writing.
 
@@ -246,7 +258,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 14. Overuse of Boldface
+### 15. Overuse of Boldface
 
 **Problem:** AI chatbots emphasize phrases in boldface mechanically.
 
@@ -258,7 +270,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 15. Inline-Header Vertical Lists
+### 16. Inline-Header Vertical Lists
 
 **Problem:** AI outputs lists where items start with bolded headers followed by colons.
 
@@ -272,7 +284,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 16. Title Case in Headings
+### 17. Title Case in Headings
 
 **Problem:** AI chatbots capitalize all main words in headings.
 
@@ -284,7 +296,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 17. Emojis
+### 18. Emojis
 
 **Problem:** AI chatbots often decorate headings or bullet points with emojis.
 
@@ -298,7 +310,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 18. Curly Quotation Marks
+### 19. Curly Quotation Marks
 
 **Problem:** ChatGPT uses curly quotes (“...”) instead of straight quotes ("...").
 
@@ -312,7 +324,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ## COMMUNICATION PATTERNS
 
-### 19. Collaborative Communication Artifacts
+### 20. Collaborative Communication Artifacts
 
 **Words to watch:** I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., let me know, here is a...
 
@@ -326,7 +338,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 20. Knowledge-Cutoff Disclaimers
+### 21. Knowledge-Cutoff Disclaimers
 
 **Words to watch:** as of [date], Up to my last training update, While specific details are limited/scarce..., based on available information...
 
@@ -340,7 +352,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 21. Sycophantic/Servile Tone
+### 22. Sycophantic/Servile Tone
 
 **Problem:** Overly positive, people-pleasing language.
 
@@ -354,7 +366,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ## FILLER AND HEDGING
 
-### 22. Filler Phrases
+### 23. Filler Phrases
 
 **Before → After:**
 - "In order to achieve this goal" → "To achieve this"
@@ -366,7 +378,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 23. Excessive Hedging
+### 24. Excessive Hedging
 
 **Problem:** Over-qualifying statements.
 
@@ -378,7 +390,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 24. Generic Positive Conclusions
+### 25. Generic Positive Conclusions
 
 **Problem:** Vague upbeat endings.
 
