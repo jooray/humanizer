@@ -1,28 +1,46 @@
 # Humanizer
 
-A Claude Code skill that removes signs of AI-generated writing from text, making it sound more natural and human.
+A skill for Claude Code and OpenCode that removes signs of AI-generated writing from text, making it sound more natural and human.
 
 ## Installation
 
-### Recommended (clone directly into Claude Code skills directory)
+### Claude Code
+
+Clone directly into Claude Code's skills directory:
 
 ```bash
 mkdir -p ~/.claude/skills
 git clone https://github.com/blader/humanizer.git ~/.claude/skills/humanizer
 ```
 
-### Manual install/update (only the skill file)
-
-If you already have this repo cloned (or you downloaded `SKILL.md`), copy the skill file into Claude Code’s skills directory:
+Or copy the skill file manually if you already have this repo cloned:
 
 ```bash
 mkdir -p ~/.claude/skills/humanizer
 cp SKILL.md ~/.claude/skills/humanizer/
 ```
 
+### OpenCode
+
+Clone directly into OpenCode's skills directory:
+
+```bash
+mkdir -p ~/.config/opencode/skills
+git clone https://github.com/blader/humanizer.git ~/.config/opencode/skills/humanizer
+```
+
+Or copy the skill file manually if you already have this repo cloned:
+
+```bash
+mkdir -p ~/.config/opencode/skills/humanizer
+cp SKILL.md ~/.config/opencode/skills/humanizer/
+```
+
+> **Note:** OpenCode also scans `~/.claude/skills/` for compatibility, so a single clone into `~/.claude/skills/humanizer/` works for both tools.
+
 ## Usage
 
-In Claude Code, invoke the skill:
+### Claude Code
 
 ```
 /humanizer
@@ -30,11 +48,35 @@ In Claude Code, invoke the skill:
 [paste your text here]
 ```
 
-Or ask Claude to humanize text directly:
+### OpenCode
+
+```
+/humanizer
+
+[paste your text here]
+```
+
+Or ask the model to humanize text directly in either tool:
 
 ```
 Please humanize this text: [your text]
 ```
+
+### Voice Calibration
+
+To match your personal writing style, provide a sample of your own writing:
+
+```
+/humanizer
+
+Here's a sample of my writing for voice matching:
+[paste 2-3 paragraphs of your own writing]
+
+Now humanize this text:
+[paste AI text to humanize]
+```
+
+The skill will analyze your sentence rhythm, word choices, and quirks, then apply them to the rewrite instead of producing generic "clean" output.
 
 ## Overview
 
@@ -46,7 +88,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 > "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
 
-## 25 Patterns Detected (with Before/After Examples)
+## 30 Patterns Detected (with Before/After Examples)
 
 ### Content Patterns
 
@@ -63,24 +105,29 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 | # | Pattern | Before | After |
 |---|---------|--------|-------|
-| 7 | **AI vocabulary** | "Additionally... testament... landscape... showcasing" | "also... remain common" |
+| 7 | **AI vocabulary** | "Actually... additionally... testament... landscape... showcasing" | "also... remain common" |
 | 8 | **Copula avoidance** | "serves as... features... boasts" | "is... has" |
-| 9 | **Negative parallelisms** | "It's not just X, it's Y" | State the point directly |
+| 9 | **Negative parallelisms / tailing negations** | "It's not just X, it's Y", "..., no guessing" | State the point directly |
 | 10 | **Rule of three** | "innovation, inspiration, and insights" | Use natural number of items |
-| 11 | **Staccato contrast** | "SimpleX. Not Telegram. Not WhatsApp." | State the contrast in one sentence |
-| 12 | **Synonym cycling** | "protagonist... main character... central figure... hero" | "protagonist" (repeat when clearest) |
-| 13 | **False ranges** | "from the Big Bang to dark matter" | List topics directly |
+| 11 | **Synonym cycling** | "protagonist... main character... central figure... hero" | "protagonist" (repeat when clearest) |
+| 12 | **False ranges** | "from the Big Bang to dark matter" | List topics directly |
+| 13 | **Passive voice / subjectless fragments** | "No configuration file needed" | Name the actor when it helps clarity |
+| 30 | **Staccato contrast** | "SimpleX. Not Telegram. Not WhatsApp." | State the contrast in one sentence |
 
 ### Style Patterns
 
 | # | Pattern | Before | After |
 |---|---------|--------|-------|
-| 14 | **Em dash overuse** | "institutions—not the people—yet this continues—" | Use commas or periods |
+| 14 | **Em dash overuse** | "institutions—not the people—yet this continues—" | Prefer commas or periods |
 | 15 | **Boldface overuse** | "**OKRs**, **KPIs**, **BMC**" | "OKRs, KPIs, BMC" |
 | 16 | **Inline-header lists** | "**Performance:** Performance improved" | Convert to prose |
 | 17 | **Title Case Headings** | "Strategic Negotiations And Partnerships" | "Strategic negotiations and partnerships" |
 | 18 | **Emojis** | "🚀 Launch Phase: 💡 Key Insight:" | Remove emojis |
-| 19 | **Curly quotes** | `said “the project”` | `said "the project"` |
+| 19 | **Curly quotes** | `said “the project”` | `said “the project”` |
+| 26 | **Hyphenated word pairs** | “cross-functional, data-driven, client-facing” | Drop hyphens on common word pairs |
+| 27 | **Persuasive authority tropes** | “At its core, what matters is...” | State the point directly |
+| 28 | **Signposting announcements** | “Let's dive in”, “Here's what you need to know” | Start with the content |
+| 29 | **Fragmented headers** | “## Performance” + “Speed matters.” | Let the heading do the work |
 
 ### Communication Patterns
 
@@ -133,7 +180,10 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 ## Version History
 
-- **2.3.0** - Added the staccato contrast pattern (the "Not X" pattern) and updated pattern counts
+- **2.5.1** - Added a passive-voice / subjectless-fragment rule, raising the total to 29 patterns
+- **2.5.0** - Added patterns for persuasive framing, signposting, and fragmented headers; expanded negative parallelisms to cover tailing negations; tightened wording around em dash overuse; fixed frontmatter wording to use "filler phrases"
+- **2.4.0** - Added voice calibration: match the user's personal writing style from samples
+- **2.3.0** - Added pattern #25: hyphenated word pair overuse; added the staccato contrast pattern (the "Not X" pattern)
 - **2.2.0** - Added a final "obviously AI generated" audit + second-pass rewrite prompts
 - **2.1.1** - Fixed pattern #18 example (curly quotes vs straight quotes)
 - **2.1.0** - Added before/after examples for all 24 patterns
