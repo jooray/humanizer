@@ -10,7 +10,7 @@ Clone directly into Claude Code's skills directory:
 
 ```bash
 mkdir -p ~/.claude/skills
-git clone https://github.com/blader/humanizer.git ~/.claude/skills/humanizer
+git clone https://github.com/jooray/humanizer.git ~/.claude/skills/humanizer
 ```
 
 Or copy the skill file manually if you already have this repo cloned:
@@ -26,7 +26,7 @@ Clone directly into OpenCode's skills directory:
 
 ```bash
 mkdir -p ~/.config/opencode/skills
-git clone https://github.com/blader/humanizer.git ~/.config/opencode/skills/humanizer
+git clone https://github.com/jooray/humanizer.git ~/.config/opencode/skills/humanizer
 ```
 
 Or copy the skill file manually if you already have this repo cloned:
