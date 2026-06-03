@@ -255,7 +255,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 > The book covers the Big Bang, star formation, and current theories about dark matter.
 
 
-### 13. Passive Voice and Subjectless Fragments
+### 14. Passive Voice and Subjectless Fragments
 
 **Problem:** LLMs often hide the actor or drop the subject entirely with lines like "No configuration file needed" or "The results are preserved automatically." Rewrite these when active voice makes the sentence clearer and more direct.
 
@@ -268,7 +268,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ## STYLE PATTERNS
 
-### 14. Em Dashes (and En Dashes): Cut Them
+### 15. Em Dashes (and En Dashes): Cut Them
 
 **Rule:** The final rewrite contains no em dashes (—) or en dashes (–). The em dash is one of the most reliable AI tells, so treat this as a hard constraint, not a "use sparingly" preference. Replace each one, in rough order of preference: a period (start a new sentence), a comma (a tight aside), a colon (introducing an explanation), parentheses (a true aside), or restructure the sentence. Also catch spaced em dashes (` — `) and double hyphens (` -- `) used the same way.
 
@@ -287,7 +287,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 Before returning the final rewrite, scan it for `—` and `–`. Any hit means the draft isn't done.
 
 
-### 15. Overuse of Boldface
+### 16. Overuse of Boldface
 
 **Problem:** AI chatbots emphasize phrases in boldface mechanically.
 
@@ -298,7 +298,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > It blends OKRs, KPIs, and visual strategy tools like the Business Model Canvas and Balanced Scorecard.
 
 
-### 16. Inline-Header Vertical Lists
+### 17. Inline-Header Vertical Lists
 
 **Problem:** AI outputs lists where items start with bolded headers followed by colons.
 
@@ -311,7 +311,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > The update improves the interface, speeds up load times through optimized algorithms, and adds end-to-end encryption.
 
 
-### 17. Title Case in Headings
+### 18. Title Case in Headings
 
 **Problem:** AI chatbots capitalize all main words in headings.
 
@@ -322,7 +322,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > ## Strategic negotiations and global partnerships
 
 
-### 18. Emojis
+### 19. Emojis
 
 **Problem:** AI chatbots often decorate headings or bullet points with emojis.
 
@@ -335,7 +335,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > The product launches in Q3. User research showed a preference for simplicity. Next step: schedule a follow-up meeting.
 
 
-### 19. Curly Quotation Marks
+### 20. Curly Quotation Marks
 
 **Problem:** ChatGPT uses curly quotes (“...”) instead of straight quotes ("...").
 
@@ -348,7 +348,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 
 ## COMMUNICATION PATTERNS
 
-### 20. Collaborative Communication Artifacts
+### 21. Collaborative Communication Artifacts
 
 **Words to watch:** I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., let me know, here is a...
 
@@ -361,7 +361,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > The French Revolution began in 1789 when financial crisis and food shortages led to widespread unrest.
 
 
-### 21. Knowledge-Cutoff Disclaimers and Speculative Gap-Filling
+### 22. Knowledge-Cutoff Disclaimers and Speculative Gap-Filling
 
 **Words to watch:** as of [date], Up to my last training update, While specific details are limited/scarce..., based on available information, not publicly available, maintains a low profile, keeps personal details private, prefers to stay out of the spotlight, likely [grew up/studied/began], it is believed that
 
@@ -380,7 +380,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > Her early life is not documented in the available sources. (Or omit the section.)
 
 
-### 22. Sycophantic/Servile Tone
+### 23. Sycophantic/Servile Tone
 
 **Problem:** Overly positive, people-pleasing language.
 
@@ -393,7 +393,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 
 ## FILLER AND HEDGING
 
-### 23. Filler Phrases
+### 24. Filler Phrases
 
 **Before → After:**
 - "In order to achieve this goal" → "To achieve this"
@@ -404,7 +404,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 - "It is important to note that the data shows" → "The data shows"
 
 
-### 24. Excessive Hedging
+### 25. Excessive Hedging
 
 **Problem:** Over-qualifying statements.
 
@@ -415,7 +415,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > The policy may affect outcomes.
 
 
-### 25. Generic Positive Conclusions
+### 26. Generic Positive Conclusions
 
 **Problem:** Vague upbeat endings.
 
@@ -426,7 +426,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > The company plans to open two more locations next year.
 
 
-### 26. Hyphenated Word Pair Overuse
+### 27. Hyphenated Word Pair Overuse
 
 **Words to watch:** third-party, cross-functional, client-facing, data-driven, decision-making, well-known, high-quality, real-time, long-term, end-to-end
 
@@ -439,7 +439,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > The cross-functional team delivered a high-quality, data-driven report. The team is cross functional, the report is high quality, and the methodology is data driven.
 
 
-### 27. Persuasive Authority Tropes
+### 28. Persuasive Authority Tropes
 
 **Phrases to watch:** The real question is, at its core, in reality, what really matters, fundamentally, the deeper issue, the heart of the matter
 
@@ -452,7 +452,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > The question is whether teams can adapt. That mostly depends on whether the organization is ready to change its habits.
 
 
-### 28. Signposting and Announcements
+### 29. Signposting and Announcements
 
 **Phrases to watch:** Let's dive in, let's explore, let's break this down, here's what you need to know, now let's look at, without further ado
 
@@ -465,7 +465,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > Next.js caches data at multiple layers, including request memoization, the data cache, and the router cache.
 
 
-### 29. Fragmented Headers
+### 30. Fragmented Headers
 
 **Signs to watch:** A heading followed by a one-line paragraph that simply restates the heading before the real content begins.
 
@@ -484,7 +484,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > When users hit a slow page, they leave.
 
 
-### 30. Diff-Anchored Writing
+### 31. Diff-Anchored Writing
 
 **Problem:** Documentation or comments written as if narrating a change rather than describing the thing as it is. Unless the document is inherently version-scoped (changelogs, release notes, migration guides), it should read coherently without knowing what changed in the last commit.
 
