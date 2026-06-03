@@ -88,7 +88,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 > "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
 
-## 30 Patterns Detected (with Before/After Examples)
+## 31 Patterns Detected (with Before/After Examples)
 
 ### Content Patterns
 
@@ -109,42 +109,42 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 | 8 | **Copula avoidance** | "serves as... features... boasts" | "is... has" |
 | 9 | **Negative parallelisms / tailing negations** | "It's not just X, it's Y", "..., no guessing" | State the point directly |
 | 10 | **Rule of three** | "innovation, inspiration, and insights" | Use natural number of items |
-| 11 | **Synonym cycling** | "protagonist... main character... central figure... hero" | "protagonist" (repeat when clearest) |
-| 12 | **False ranges** | "from the Big Bang to dark matter" | List topics directly |
-| 13 | **Passive voice / subjectless fragments** | "No configuration file needed" | Name the actor when it helps clarity |
-| 30 | **Staccato contrast** | "SimpleX. Not Telegram. Not WhatsApp." | State the contrast in one sentence |
+| 11 | **Staccato contrast** | "SimpleX. Not Telegram. Not WhatsApp." | State the contrast in one sentence |
+| 12 | **Synonym cycling** | "protagonist... main character... central figure... hero" | "protagonist" (repeat when clearest) |
+| 13 | **False ranges** | "from the Big Bang to dark matter" | List topics directly |
+| 14 | **Passive voice / subjectless fragments** | "No configuration file needed" | Name the actor when it helps clarity |
 
 ### Style Patterns
 
 | # | Pattern | Before | After |
 |---|---------|--------|-------|
-| 14 | **Em/en dashes** | "institutions—not the people—yet this continues—" | Cut them: periods, commas, colons, or parentheses |
-| 15 | **Boldface overuse** | "**OKRs**, **KPIs**, **BMC**" | "OKRs, KPIs, BMC" |
-| 16 | **Inline-header lists** | "**Performance:** Performance improved" | Convert to prose |
-| 17 | **Title Case Headings** | "Strategic Negotiations And Partnerships" | "Strategic negotiations and partnerships" |
-| 18 | **Emojis** | "🚀 Launch Phase: 💡 Key Insight:" | Remove emojis |
-| 19 | **Curly quotes** | `said “the project”` | `said “the project”` |
-| 26 | **Hyphenated word pairs** | “cross-functional, data-driven, client-facing” | Drop hyphens on common word pairs |
-| 27 | **Persuasive authority tropes** | “At its core, what matters is...” | State the point directly |
-| 28 | **Signposting announcements** | “Let's dive in”, “Here's what you need to know” | Start with the content |
-| 29 | **Fragmented headers** | “## Performance” + “Speed matters.” | Let the heading do the work |
+| 15 | **Em/en dashes** | "institutions—not the people—yet this continues—" | Cut them: periods, commas, colons, or parentheses |
+| 16 | **Boldface overuse** | "**OKRs**, **KPIs**, **BMC**" | "OKRs, KPIs, BMC" |
+| 17 | **Inline-header lists** | "**Performance:** Performance improved" | Convert to prose |
+| 18 | **Title Case Headings** | "Strategic Negotiations And Partnerships" | "Strategic negotiations and partnerships" |
+| 19 | **Emojis** | "🚀 Launch Phase: 💡 Key Insight:" | Remove emojis |
+| 20 | **Curly quotes** | `said “the project”` | `said “the project”` |
+| 27 | **Hyphenated word pairs** | “cross-functional, data-driven, client-facing” | Drop hyphens on common word pairs |
+| 28 | **Persuasive authority tropes** | “At its core, what matters is...” | State the point directly |
+| 29 | **Signposting announcements** | “Let's dive in”, “Here's what you need to know” | Start with the content |
+| 30 | **Fragmented headers** | “## Performance” + “Speed matters.” | Let the heading do the work |
 | 31 | **Diff-anchored writing** | “This function was added to replace...” | Describe what it does, not what changed |
 
 ### Communication Patterns
 
 | # | Pattern | Before | After |
 |---|---------|--------|-------|
-| 20 | **Chatbot artifacts** | "I hope this helps! Let me know if..." | Remove entirely |
-| 21 | **Cutoff disclaimers** | "While details are limited in available sources..." | Find sources or remove |
-| 22 | **Sycophantic tone** | "Great question! You're absolutely right!" | Respond directly |
+| 21 | **Chatbot artifacts** | "I hope this helps! Let me know if..." | Remove entirely |
+| 22 | **Cutoff disclaimers** | "While details are limited in available sources..." | Find sources or remove |
+| 23 | **Sycophantic tone** | "Great question! You're absolutely right!" | Respond directly |
 
 ### Filler and Hedging
 
 | # | Pattern | Before | After |
 |---|---------|--------|-------|
-| 23 | **Filler phrases** | "In order to", "Due to the fact that" | "To", "Because" |
-| 24 | **Excessive hedging** | "could potentially possibly" | "may" |
-| 25 | **Generic conclusions** | "The future looks bright" | Specific plans or facts |
+| 24 | **Filler phrases** | "In order to", "Due to the fact that" | "To", "Because" |
+| 25 | **Excessive hedging** | "could potentially possibly" | "may" |
+| 26 | **Generic conclusions** | "The future looks bright" | Specific plans or facts |
 
 ## Full Example
 
@@ -181,7 +181,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 ## Version History
 
-- **2.7.0** - Added pattern #30 (diff-anchored writing); made em/en dashes a hard cut rather than "overuse"; expanded #21 to cover speculative gap-filling ("maintains a low profile"). 30 patterns total.
+- **2.7.0** - Added pattern #31 (diff-anchored writing); made em/en dashes a hard cut rather than "overuse"; expanded #22 to cover speculative gap-filling ("maintains a low profile"); fixed duplicate section numbering (two #13 sections). 31 patterns total.
 - **2.6.0** - Cleanup pass: consolidated the duplicated workflow sections, gated the personality guidance to content where voice is wanted, removed the model-fingerprinting subsection, and condensed the worked example. No change to the 29 patterns.
 - **2.5.1** - Added a passive-voice / subjectless-fragment rule, raising the total to 29 patterns
 - **2.5.0** - Added patterns for persuasive framing, signposting, and fragmented headers; expanded negative parallelisms to cover tailing negations; tightened wording around em dash overuse; fixed frontmatter wording to use "filler phrases"
