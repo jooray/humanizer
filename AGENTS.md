@@ -15,7 +15,7 @@ A **Claude Code / OpenCode skill** implemented entirely as Markdown. The runtime
 
 `SKILL.md` and `README.md` must stay in sync. When you change behavior or content:
 
-- **Patterns:** the skill currently defines **30 numbered patterns**. If you add, remove, or renumber any, update the README pattern table, its "N Patterns Detected" heading, and every cross-reference in the same change. Keep numbering stable unless you are deliberately renumbering.
+- **Patterns:** the skill currently defines **34 numbered patterns**. If you add, remove, or renumber any, update the README pattern table, its "N Patterns Detected" heading, and every cross-reference in the same change. Keep numbering stable unless you are deliberately renumbering.
 - **Version:** `SKILL.md` frontmatter has a `version:` field and `README.md` has a "Version History" section. Bump both together.
 - **Non-obvious fixes:** if you change the prompt to handle a tricky failure mode (a repeated mis-edit, an unexpected tone shift), add a short note to the README version history explaining what was fixed and why.
 
