@@ -46,14 +46,14 @@ pattern_numbers = [
     int(number)
     for number in re.findall(r"(?m)^### ([0-9]+)\. ", SKILL)
 ]
-if pattern_numbers != list(range(1, 35)):
-    raise SystemExit(f"Expected patterns 1-34, found {pattern_numbers}")
+if pattern_numbers != list(range(1, 36)):
+    raise SystemExit(f"Expected patterns 1-35, found {pattern_numbers}")
 
 readme_numbers = {
     int(number) for number in re.findall(r"(?m)^\| ([0-9]+) \|", README)
 }
-if readme_numbers != set(range(1, 35)):
-    raise SystemExit("README pattern table must contain patterns 1-34")
+if readme_numbers != set(range(1, 36)):
+    raise SystemExit("README pattern table must contain patterns 1-35")
 
 if len(SKILL.splitlines()) > 500:
     raise SystemExit("SKILL.md exceeds the 500-line portability budget")

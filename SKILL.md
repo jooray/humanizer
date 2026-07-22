@@ -9,7 +9,7 @@ description: |
   voice, negative parallelisms, and filler phrases.
 license: MIT
 metadata:
-  version: "2.9.2"
+  version: "2.10.0"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -25,7 +25,7 @@ When given text to humanize:
 3. **Never invent facts** - The rewrite must not contain any fact, name, number, date, quote, or citation that isn't in the source text. Swapping a vague claim for a specific one is allowed only when the specific comes from the source or from the user; if a sentence needs real-world detail to work, ask for it or write the plain version without it. Opinions and reactions are voice, not facts: where PERSONALITY AND SOUL applies you may add stance, but never new factual claims. (In fiction, invented detail is the job. This rule governs everything else.)
 4. **Match the voice** - Fit the intended tone (formal, casual, technical). Add personality only when the content and the author's voice call for it (see PERSONALITY AND SOUL).
 
-How you're invoked changes what you deliver (see Invocation Modes). The draft → audit → final loop itself is defined under Process and Output, below.
+How you're invoked changes what you deliver (see Invocation Modes), and whether you rewrite at all (see Detect Mode). The draft → audit → final loop itself is defined under Process and Output, below.
 
 ## Voice Calibration
 
@@ -344,7 +344,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 ### 33. Aphorism Formulas
 
 **Words to watch:** X is the Y of Z, X becomes a trap, X is not a tool but a mirror, the language of, the currency of, the architecture of
-**Problem:** LLMs turn ordinary claims into reusable aphorisms that sound profound without adding precision. Replace the formula with the concrete claim it is gesturing at.
+**Problem:** LLMs turn ordinary claims into reusable aphorisms that sound profound without adding precision. Replace the formula with the concrete claim it is gesturing at. When the aphorism is a closing mic-drop line, delete it rather than polishing it into a better metaphor; end on the clearest concrete sentence already in the draft.
 **Before:**
 > Symmetry is the language of trust. Efficiency becomes a trap when teams forget the human layer.
 **After:**
@@ -352,12 +352,20 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 
 ### 34. Conversational Rhetorical Openers
 
-**Phrases to watch:** Honestly?, Look, Here's the thing, The thing is, Let's be honest, Real talk, when used as standalone hooks or fake-candid pauses before an ordinary point.
+**Phrases to watch:** Honestly?, Look, Here's the thing, The thing is, Let's be honest, Real talk, What if I told you, Think about it:, Plot twist:, the part everyone misses, what nobody tells you, when used as standalone hooks, faux-insight flattery, or fake-candid pauses before an ordinary point (including self-answered "Question? Answer." pairs).
 **Problem:** LLMs open with a fake-candid hook to manufacture intimacy before delivering a routine claim. The tell is the theatrical pause-and-reveal: a one-word question or aside, then the "real" answer. A person being honest usually just says the thing.
 **Before:**
 > Is it worth the price? Honestly? It depends on how often you'll use it.
 **After:**
 > Whether it's worth the price depends on how often you'll use it.
+
+### 35. Colon-Reveal Constructions
+**Problem:** LLMs build a noun phrase, drop a colon, then stage a dramatic lowercase payoff as if revealing a secret: "The best part: it learns." An ordinary statement gets inflated into a staged reveal.
+**Rule:** Prefer sentence case after a colon unless grammar, a proper noun, a title, or code requires otherwise, and prefer a plain sentence over the noun-colon-payoff shape when the reveal isn't earned.
+**Before:**
+> The real cost isn't the subscription: it's the hours spent onboarding a team that never adopts it.
+**After:**
+> The subscription is cheap. The real cost is the hours spent onboarding a team that never adopts it.
 
 ## DETECTION GUIDANCE
 
@@ -402,6 +410,14 @@ When you see these, lean toward leaving the prose alone — they are evidence of
 **File mode.** The user points at a file. Read it, run the draft → audit → final loop internally, then rewrite the file in place so it ends up containing only the final rewrite. Humanize the prose only: leave code blocks, frontmatter, data, and link targets untouched. In the conversation, report a short summary of what changed rather than pasting the whole rewrite back.
 
 **Embedded mode.** Another task or agent is using this skill as one step of a larger job (a PR description, a commit message, a doc). Run the loop internally and output only the final text. No draft, no audit bullets, no summary. The caller wants prose, not ceremony.
+
+## Detect Mode
+
+Invocation Modes above governs delivery format; this governs whether to rewrite at all. Most requests want a rewrite. When the user instead asks whether text reads as AI-written, or asks you to point out the tells without fixing them ("does this sound like AI?", "what's wrong with this paragraph?"), switch to detect mode:
+
+- Quote the specific offending phrase or sentence and name the pattern (by number or name) it matches. Every flag needs a quote; don't gesture at "the tone" in general.
+- Do not produce an overall AI-probability score or percentage. A pattern list is evidence the user can check against the text; a single confidence number just substitutes your guess for theirs.
+- Do not rewrite the text unless asked. If the user wants both a diagnosis and a rewrite, do both, clearly separated.
 
 ## Process and Output
 

@@ -106,11 +106,13 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 Rewrites follow a no-fabrication rule: they never add facts, names, dates, or citations that aren't in the source text. Specificity has to come from the source or the author, not from the rewrite.
 
+Ask whether text reads as AI-written and the skill switches to detect mode: it quotes the offending phrases and names the patterns instead of rewriting, and it never outputs an overall AI-probability score.
+
 ### Key Insight from Wikipedia
 
 > "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
 
-## 34 Patterns Detected (with Before/After Examples)
+## 35 Patterns Detected (with Before/After Examples)
 
 ### Content Patterns
 
@@ -170,6 +172,7 @@ Rewrites follow a no-fabrication rule: they never add facts, names, dates, or ci
 | 32 | **Manufactured punchlines / staccato drama** | "It had no preference. No prior. No nostalgia." | Use varied sentence lengths and concrete claims |
 | 33 | **Aphorism formulas** | "Symmetry is the language of trust" | Replace the formula with the actual claim |
 | 34 | **Conversational rhetorical openers** | "Honestly? It depends..." | Remove the fake-candid setup |
+| 35 | **Colon-reveal constructions** | "The best part: it learns." | State it as a plain sentence |
 
 ## Full Example
 
@@ -205,9 +208,11 @@ Rewrites follow a no-fabrication rule: they never add facts, names, dates, or ci
 
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) - Primary source
 - [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup) - Maintaining organization
+- [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) (MIT, © Peter Yang) - Inspired the colon-reveal pattern (#35), the "delete rather than repolish" fix for mic-drop closers (#33), and detect mode's no-score stance
 
 ## Version History
 
+- **2.10.0** - Added pattern #35 (colon-reveal constructions) and a Detect Mode that quotes offending patterns instead of rewriting and never outputs an AI-probability score; expanded #34 with more faux-insight/rhetorical-setup phrasing and #33 with a delete-don't-repolish instruction for mic-drop closers. Ideas credited to [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) (MIT). 35 patterns total.
 - **2.9.2** - Merged upstream's no-fabrication rule, invocation modes, and portability cleanup (nonportable frontmatter removed, package validation added) while keeping this fork's 34th pattern (staccato contrast) and the full worked example in the README. Fixed a long-standing README table that mislabeled several filler/hedging patterns as style patterns. No change to the 34 patterns.
 - **2.9.1** - Improved distribution and portability: removed nonportable frontmatter and tool preapprovals, made global installation the documented default, added package validation, and removed the duplicated long-form example from the runtime prompt (kept in this README instead). No change to the 34 patterns.
 - **2.9.0** - Added a no-fabrication rule: rewrites may not invent facts, names, dates, or citations not present in the source, and every example that modeled invented specifics was re-cut to use only source information. Replaced paragraph-count parity with an information-over-shape rule, made a user's voice sample outrank the em dash ban, and added invocation modes (pasted text / file / embedded). No change to the 34 patterns.
