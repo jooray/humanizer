@@ -34,6 +34,32 @@ npx skills add jooray/humanizer --global --agent <agent-name>
 
 Omit `--global` for a project-local install that can be committed and shared with collaborators. Start a new agent session or reload skills after installation.
 
+### OpenCode
+
+Install Humanizer globally for OpenCode:
+
+```bash
+npx skills add jooray/humanizer --global --agent opencode
+```
+
+### Codex
+
+Install Humanizer globally for Codex:
+
+```bash
+npx skills add jooray/humanizer --global --agent codex
+```
+
+### Pi
+
+Install Humanizer globally for Pi:
+
+```bash
+npx skills add jooray/humanizer --global --agent pi
+```
+
+Pi also discovers globally installed skills from `~/.pi/agent/skills/`; invoke Humanizer with `/skill:humanizer` or ask Pi to humanize text.
+
 ### Claude Code plugin
 
 Claude Code users can also install Humanizer as a plugin:
@@ -212,6 +238,7 @@ Ask whether text reads as AI-written and the skill switches to detect mode: it q
 
 ## Version History
 
+- **2.10.1** - Added explicit global-install commands for OpenCode, Codex, and Pi. No change to the 35 patterns.
 - **2.10.0** - Added pattern #35 (colon-reveal constructions) and a Detect Mode that quotes offending patterns instead of rewriting and never outputs an AI-probability score; expanded #34 with more faux-insight/rhetorical-setup phrasing and #33 with a delete-don't-repolish instruction for mic-drop closers. Ideas credited to [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) (MIT). 35 patterns total.
 - **2.9.2** - Merged upstream's no-fabrication rule, invocation modes, and portability cleanup (nonportable frontmatter removed, package validation added) while keeping this fork's 34th pattern (staccato contrast) and the full worked example in the README. Fixed a long-standing README table that mislabeled several filler/hedging patterns as style patterns. No change to the 34 patterns.
 - **2.9.1** - Improved distribution and portability: removed nonportable frontmatter and tool preapprovals, made global installation the documented default, added package validation, and removed the duplicated long-form example from the runtime prompt (kept in this README instead). No change to the 34 patterns.

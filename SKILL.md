@@ -9,7 +9,7 @@ description: |
   voice, negative parallelisms, and filler phrases.
 license: MIT
 metadata:
-  version: "2.10.0"
+  version: "2.10.1"
 ---
 
 # Humanizer: Remove AI Writing Patterns
