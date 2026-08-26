@@ -6,10 +6,13 @@ description: |
   comprehensive "Signs of AI writing" guide. Detects and fixes patterns including:
   inflated symbolism, promotional language, superficial -ing analyses, vague
   attributions, em dash overuse, rule of three, AI vocabulary words, passive
-  voice, negative parallelisms, and filler phrases.
+  voice, negative parallelisms, filler phrases, and performed rigor. Includes a
+  dedicated section for Slovak and Czech text, where most AI writing is a
+  translated English draft and needs different punctuation, vocabulary, and word
+  order rules.
 license: MIT
 metadata:
-  version: "2.10.0"
+  version: "2.11.0"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -76,6 +79,8 @@ When voice is appropriate, avoid uniform sentence structures, bloodless neutrali
 **After:**
 > The temple is painted blue, green, and gold, colors meant to evoke Texas bluebonnets and the Gulf of Mexico.
 
+(For how this pattern surfaces in Slovak and Czech, see §48.)
+
 ### 4. Promotional and Advertisement-like Language
 
 **Words to watch:** boasts a, vibrant, rich (figurative), profound, enhancing its, showcasing, exemplifies, commitment to, natural beauty, nestled, in the heart of, groundbreaking (figurative), renowned, breathtaking, must-visit, stunning
@@ -118,6 +123,8 @@ When voice is appropriate, avoid uniform sentence structures, bloodless neutrali
 **After:**
 > Somali cuisine also includes camel meat, which is considered a delicacy. Pasta dishes, introduced during Italian colonization, remain common, especially in the south.
 
+(For the loan-translated version of this list, see §49.)
+
 ### 8. Avoidance of "is"/"are" (Copula Avoidance)
 
 **Words to watch:** serves as/stands as/marks/represents [a], boasts/features/offers [a]
@@ -126,6 +133,8 @@ When voice is appropriate, avoid uniform sentence structures, bloodless neutrali
 > Gallery 825 serves as LAAA's exhibition space for contemporary art. The gallery features four separate spaces and boasts over 3,000 square feet.
 **After:**
 > Gallery 825 is LAAA's exhibition space for contemporary art. The gallery has four rooms totaling 3,000 square feet.
+
+(For the Slovak and Czech equivalents, chiefly *predstavuje*, see §47.)
 
 ### 9. Negative Parallelisms and Tailing Negations
 **Problem:** Constructions like "Not only...but..." or "It's not just about..., it's..." are overused. So are clipped tailing-negation fragments such as "no guessing" or "no wasted motion" tacked onto the end of a sentence instead of written as a real clause.
@@ -187,7 +196,7 @@ When voice is appropriate, avoid uniform sentence structures, bloodless neutrali
 **After:**
 > The new policy, announced without warning, affects thousands of workers. The changes, long overdue according to critics, will take effect immediately.
 
-Before returning the final rewrite, scan it for `—` and `–`. Any hit means the draft isn't done. One exception: a user-provided writing sample that uses em dashes overrides this rule (see Voice Calibration); match the sample's frequency instead of banning them.
+Before returning the final rewrite, scan it for `—` and `–`. Any hit means the draft isn't done. Two exceptions. A user-provided writing sample that uses em dashes overrides this rule (see Voice Calibration); match the sample's frequency instead of banning them. And in Slovak or Czech text the en dash half of this rule is replaced by §46, which keeps the en dash in ranges while cutting the em dash even harder.
 
 ### 16. Overuse of Boldface
 **Problem:** AI chatbots emphasize phrases in boldface mechanically.
@@ -227,6 +236,8 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > He said “the project is on track” but others disagreed.
 **After:**
 > He said "the project is on track" but others disagreed.
+
+This rule is English-only. In Slovak and Czech the curly low-high pair is correct typography and must be preserved; see §45.
 
 ## COMMUNICATION PATTERNS
 
@@ -343,12 +354,20 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 
 ### 33. Aphorism Formulas
 
-**Words to watch:** X is the Y of Z, X becomes a trap, X is not a tool but a mirror, the language of, the currency of, the architecture of
+**Words to watch:** X is the Y of Z, X becomes a trap, X is not a tool but a mirror, the language of, the currency of, the architecture of, X has a date, X has an expiry date, X has a shelf life, X is on borrowed time, the clock is running on X
 **Problem:** LLMs turn ordinary claims into reusable aphorisms that sound profound without adding precision. Replace the formula with the concrete claim it is gesturing at. When the aphorism is a closing mic-drop line, delete it rather than polishing it into a better metaphor; end on the clearest concrete sentence already in the draft.
 **Before:**
 > Symmetry is the language of trust. Efficiency becomes a trap when teams forget the human layer.
 **After:**
 > Symmetric layouts often feel more predictable to users. Teams can over-optimize workflows and miss how people actually use them.
+
+A second shape belongs here: portentous shorthand, where a concrete fact the writer already knows gets swapped for an ominous possession. "This advantage has a date" is not more sophisticated than naming the date, it is the same claim with the useful part removed. Put the fact back.
+**Before (portentous shorthand):**
+> The bank privacy is a real advantage, but it already has a date.
+**After:**
+> The bank privacy is a real advantage until the first exchange in 2027.
+
+(Use whatever date the source gives. If the source gives none, say what ends and why, and drop the flourish rather than keeping it as a substitute for the missing detail.)
 
 ### 34. Conversational Rhetorical Openers
 
@@ -366,6 +385,242 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > The real cost isn't the subscription: it's the hours spent onboarding a team that never adopts it.
 **After:**
 > The subscription is cheap. The real cost is the hours spent onboarding a team that never adopts it.
+
+### 36. Performed Rigor and Candor
+
+**Phrases to watch:** it's worth being precise/exact/careful here, it's worth distinguishing, this deserves verification and not just assertion, to be precise, to be fair, in fairness, let's be accurate, I want to be careful here, the honest version is, the honest answer is, the fair reading is, we won't undersell/oversell/downplay this, we're not going to sugarcoat it, we say it plainly, no spin, to put it bluntly, credit where it's due
+**Problem:** The writer announces that they are being careful, fair, or honest instead of being those things. Precision performed is not precision delivered: the distinction or caveat that follows lands harder without a preamble certifying its integrity, and often the preamble is the whole move with nothing behind it. Distinct from §29, which announces *what* is coming rather than how virtuously it is being done, and from §25, which weakens a claim rather than decorating it with the writer's good faith.
+**Rule:** Delete the announcement, keep what follows. If nothing substantive follows, cut the sentence. Never swap one certificate of honesty for a better-worded one.
+
+**Before:**
+> It sounds too good to be true, so it's worth being precise about the mechanism. The country does not count days.
+**After:**
+> It sounds too good to be true. The country does not count days.
+
+**Before:**
+> We checked the competition properly, because this claim gets repeated often and deserves verification, not just assertion.
+**After:**
+> We checked the competition ourselves, because this claim gets repeated a lot.
+
+**Before:**
+> It's worth distinguishing what we are actually talking about here. CRS is an automated exchange.
+**After:**
+> CRS is an automated exchange.
+**Before:**
+> The honest version of the claim is this: it is the only country that gives you tax residency with no physical presence.
+**After:**
+> It is the only country that gives you tax residency with no physical presence.
+**Before:**
+> It is a real advantage and we will not undersell it. But it already has an end date, and we describe that below, plainly.
+**After:**
+> It is a real advantage. The section below gives the date it ends.
+
+(That last one also drops "plainly." Announcing that the next section is candid implies the rest of the document was not.)
+
+### 37. Argument Residue
+
+**Phrases to watch:** while some might argue, it would be easy to dismiss this as, one might object that... but, critics may claim, some will say, it's tempting to think, detractors point to
+**Problem:** A rebuttal to an objection nobody raised. The model drafted through more than one position before settling, and the discarded counterargument survives as a phantom opponent. The tell is structural rather than lexical: the sentence is shaped as a reply, but the claim it replies to appears nowhere else in the piece.
+**Rule:** Cut the phantom rebuttal and state the position directly. Keep it only when the objection is real and named in the text, or when an identifiable person actually made it. Related to §36: both are drafting residue, one leaving the writer's self-assessment in the text and the other leaving the writer's discarded opposition.
+**Before:**
+> While some might argue that territorial taxation is a loophole, it is simply how the statute defines taxable income.
+**After:**
+> The statute defines taxable income as income from local sources, so foreign income falls outside it.
+
+### 38. Reasoning-Chain Artifacts
+
+**Phrases to watch:** Let me think, Let's work through this, First, I'll, Breaking this down, Step 1:, To answer this I need to, Now that we have established, numbered thinking meant to stay internal
+**Problem:** Chain-of-thought scaffolding leaking into the final text. Distinct from §21, which is chatbot correspondence addressed to the reader; this is the model narrating its own procedure as though the procedure were the content.
+**Rule:** Delete the scaffolding and keep the conclusion in the author's voice.
+**Before:**
+> Let me break this down. First, I'll look at the tax rules, then at the residency rules. Step 1: the tax is territorial.
+**After:**
+> The tax is territorial. The residency rules are separate from it.
+
+### 39. False Agency
+
+**Words to watch:** the data tells us, the numbers reveal, the evidence demands, the market rewards, the research suggests, the decision emerges, the technology demands, history teaches us
+**Problem:** An abstraction performing a willed human action. It hides whoever actually did the thing and borrows authority by making the subject sound like it spoke for itself.
+**Rule:** Name the actor the source names, address the reader as "you", or restate it as a plain fact. Do not invent an actor to fill the slot; if the source has none, the fact stands on its own.
+**Before:**
+> The data tells us that costs rose, and the market rewards firms that adapt.
+**After:**
+> Costs rose. Firms that adapted kept more of their customers.
+
+### 40. Forensic Residue
+
+**Problem:** Artifacts that exist nowhere except in machine-generated or hastily pasted text. Unlike everything else in this guide these are close to proof rather than evidence, and they survive editing passes because they are invisible or look like formatting.
+**What to search for:**
+- Unfilled templates: `[Your Name]`, `[Company]`, `[insert date]`, `XXXX` date stubs
+- Chatbot citation tokens: `citeturn0search0`, `contentReference[oaicite:0]`, `oai_citation`
+- Tracking parameters appended to URLs: `utm_source=chatgpt.com`, `utm_source=perplexity`
+- Invisible characters: zero-width space (U+200B), zero-width joiner (U+200D), soft hyphen (U+00AD), non-breaking spaces where ordinary ones belong
+- Homoglyphs: Cyrillic а е о р с or Greek ο substituted for Latin letters
+
+**Rule:** Strip them and normalize to plain NFC text. Run this scan before returning any rewrite, the same way you scan for em dashes under §15.
+
+### 41. Structural Uniformity
+
+**Problem:** Sentences can be clean and the piece still read as generated, because the shape gives it away: sections of near-identical length, lists that all happen to have three items, and a recap sentence closing every section. Models produce parallel self-contained blocks where a writer produces an argument that goes somewhere.
+**The reshuffle test:** swap the second and fourth paragraphs. If nothing breaks, the piece is a stack of interchangeable blocks rather than a line of reasoning, and no amount of sentence-level editing will fix that.
+**Rule:** Vary section depth on purpose, some getting two paragraphs and some six. Let each list be the length its content actually is, including lists of two. Cut the closing recap: the reader just read the section.
+**Before:**
+> ## Cost
+> [three paragraphs] In short, cost is what decides this.
+> ## Speed
+> [three paragraphs] In short, speed is what decides this for small teams.
+**After:**
+> ## Cost
+> [three paragraphs, ending on the last concrete figure]
+> ## Speed
+> [one paragraph, because there is less to say]
+
+### 42. Connective Tissue Pile-Up
+
+**Words to watch:** Moreover, Furthermore, Additionally, In addition, That said, That being said, Consequently, Ultimately, In conclusion, When it comes to, Moving forward
+**Problem:** §7 lists several of these as vocabulary, and the false-positive guidance rightly says one *however* proves nothing. This is the other half of that rule. A paragraph opening three consecutive sentences with a connective is welding together ideas whose relationship the writing never actually established.
+**Rule:** Count them. More than one connective opener in a paragraph, or the same one twice in a section, means the sentence order should be carrying the logic instead. Delete the connective, or start a new paragraph.
+**Before:**
+> Additionally, the fees are lower. Moreover, transfers settle faster. Furthermore, the account can be opened remotely.
+**After:**
+> The fees are lower and transfers settle faster. You can open the account without going there.
+
+### 43. Hedged-Enumeration Openers
+
+**Phrases to watch:** There are several ways to, There are a few things to consider, There are many factors, It depends on a number of factors, Generally speaking, In general, It is generally a good idea to
+**Problem:** Announcing that considerations exist instead of committing to an answer. The reader asked something specific and gets a preamble about the shape of the reply. This one is measurable: it is one of the clearest separations between human and chatbot answers in the HC3 corpus.
+**Rule:** Give the specific answer first. If a list genuinely follows, the list *is* the answer, so open with it.
+**Before:**
+> There are several factors to consider when choosing a residency. Generally speaking, it depends on your situation.
+**After:**
+> The choice comes down to how many days you can spend in the country and where your income comes from.
+
+### 44. The Treadmill Effect
+
+**Problem:** A long section that restates one idea in progressively different words. A writer advances an argument; a model circles one. Distinct from §24, which is filler inside a sentence, and from §32, which is about cadence rather than information density.
+**Rule:** Ask what each paragraph adds that the previous one did not. Where the answer is "nothing, but louder", merge them and keep the clearest version. A section that shrinks by half under this test was never that long.
+**Before:**
+> Privacy matters here. The confidentiality of your accounts is central to the appeal. Keeping financial information out of automatic circulation is, for many people, the main draw.
+**After:**
+> For many people the main draw is keeping account information out of automatic circulation.
+
+## SLOVAK AND CZECH TEXT
+
+Apply this section only when the text being edited is Slovak or Czech. Everything above still applies, except where §45 and §46 explicitly override an English-only rule. The examples are Slovak; Czech behaves the same way unless a rule says otherwise.
+
+These languages need their own section because most AI text in them is an English draft in disguise: the model reasons in English patterns and emits Slovak or Czech words, so the tells arrive as loan translations, English punctuation, and English word order. Fixing the English patterns without fixing the translation artifacts leaves the text sounding just as generated.
+
+### 45. Quotation marks: keep the low-high pair
+
+**This overrides §20 for these languages.** The correct Slovak and Czech quotation marks are „…“ (U+201E opening below, U+201C closing above), and the correct apostrophe inside a foreign name is ’ (U+2019), as in Moody’s. These are native typography, not a ChatGPT artifact, and converting them to straight ASCII quotes makes the text look worse. §20 governs English only.
+
+The tell here is the wrong pair: English “…”, French «…», or a document mixing styles. A closing ” (U+201D) after an opening „ is the commonest giveaway, because it means the text was set with English punctuation rules and then only partly corrected.
+
+**Before:**
+> Rozdiel je medzi "nikto o mne nič neposiela" a „som nepostihnuteľný”.
+**After:**
+> Rozdiel je medzi „nikto o mne nič neposiela“ a „som nepostihnuteľný“.
+
+### 46. Dashes: cut the em dash harder, keep the en dash where it belongs
+
+**This overrides §15 for these languages, in both directions.**
+
+Slovak and Czech typography has no em dash. The native parenthetical dash is the pomlčka, an en dash (–) with a space on each side. An em dash (—) is therefore a stronger signal here than in English, because no native writer, editor, or style guide puts one there: it arrives only through an English draft. Cut every one, using §15's preference order (period, comma, colon, parentheses, restructure).
+
+The en dash is a different character doing a different job, and §15's ban on it does **not** carry over. Leave it alone in ranges written without a preposition (55–85 €, 2026–2028, 8:00–17:00) and in pairings of proper nouns (zápas Slovensko–Česko, trasa Bratislava–Košice). Rewriting a range with "až" is also correct and often reads better in dense prose, but that is a sentence-level judgment, not a search and replace.
+
+Leave the minus sign (−, U+2212) alone wherever it belongs to a symbol rather than prose: ratings such as A− and BBB−, temperatures, negative numbers. It is not a dash.
+
+A spaced en dash as a parenthetical is grammatically correct, but keeping a dash where the model put one preserves the rhythm that made the sentence a tell. Restructure by default; keep the pomlčka only when the author's sample uses it (see Voice Calibration).
+
+**Before:**
+> Ak už máš trvalý pobyt — a plníš mesačné povinnosti — nič z toho nie je tvoj problém. ADAC pýta 55—85 €.
+**After:**
+> Ak už máš trvalý pobyt a plníš mesačné povinnosti, nič z toho nie je tvoj problém. ADAC pýta 55–85 €.
+
+### 47. Copula avoidance, Slovak and Czech edition
+
+The local form of §8. Instead of "je" or "má", generated text reaches for **predstavuje** (represents), **poskytuje** (provides), **ponúka** (offers), **prináša** (brings), **disponuje** (has at its disposal), **umožňuje** (enables), **vyznačuje sa** (is characterized by), **slúži ako** (serves as), **zohráva úlohu** (plays a role), **vykazuje** (exhibits).
+
+"Predstavuje" is the worst offender and the most reliable. A human writes "cédula je doklad"; a translated draft writes "cédula predstavuje kľúčový doklad". These languages also drop the present-tense copula far more readily than English, so the fix is often no verb at all rather than "je".
+
+**Before:**
+> Cédula predstavuje kľúčový dokument, ktorý poskytuje prístup k bankovým službám a prináša celý rad výhod.
+**After:**
+> Na cédulu ti banky otvoria účet.
+
+### 48. Transgressive and participle padding
+
+The local form of §3. English "-ing" analyses survive translation as:
+
+- transgressives (prechodník / přechodník): zdôrazňujúc, reflektujúc, poukazujúc na, podčiarkujúc
+- clause tails: čím sa zdôrazňuje, čo odráža, pričom poukazuje na, čím prispieva k
+- stacked adjectival participles: neustále sa vyvíjajúci, dynamicky rastúci, dlhodobo pretrvávajúci
+
+The transgressive is archaic in modern Slovak and bookish in Czech; almost nobody writes it outside literary pastiche, so in ordinary prose it is close to a confession. The clause tails are commoner and correspondingly weaker evidence, but do the same job of bolting fake depth onto a finished sentence. Cut the tail, or promote it to its own sentence if it carries a real claim.
+
+**Before:**
+> Paraguaj zaviedol nové pravidlá, čím zdôraznil svoj záväzok k transparentnosti, reflektujúc širší trend v regióne.
+**After:**
+> Paraguaj zaviedol nové pravidlá.
+
+(The rest was decoration. If the regional trend is real and the source documents it, write it as its own sentence with the source's detail, not as a participle hanging off this one.)
+
+### 49. Calqued AI vocabulary
+
+The §7 list, loan-translated. Watch for: **kľúčový** (key), **zásadný / rozhodujúci** (crucial), **výrazne / významne** (significantly), **komplexný** (comprehensive, and frequently a mistranslation of "complex"), **robustný**, **dynamický**, **inovatívny**, **prelomový** (groundbreaking), **fascinujúci**, **pulzujúci / živý** (vibrant), **bohatý** in the figurative sense (rich), **rozmanitý** (diverse), **dychberúci** (breathtaking), **nachádza sa v srdci** (in the heart of), **svedčí o** (is a testament to), **zohráva kľúčovú úlohu** (plays a key role), **podčiarkuje význam** (underscores the importance), **v dnešnej dobe** (in today's world), **digitálna éra**, **neustále sa vyvíjajúci** (ever-evolving), **je dôležité poznamenať** (it is important to note), **treba zdôrazniť**, **v neposlednom rade** (last but not least), **nepopierateľne** (undeniably), **na mieru** (tailored), **poďme sa pozrieť** (let's take a look).
+
+The §7 caveat holds and matters more here, because several of these are ordinary words in journalism and administrative writing. One "kľúčový" is nothing. Three in a paragraph, next to a "svedčí o" and a "v dnešnej dobe", is the tell.
+
+### 50. Pronoun and possessive spam
+
+Slovak and Czech are pro-drop: the verb ending carries the person, so a spelled-out subject pronoun is emphasis, not grammar. Possessives drop the same way whenever ownership is obvious. A translated draft keeps every English "you" and "your", which reads like someone speaking slowly to a foreigner. Demonstratives go the same way: English "the resolution" has no Slovak equivalent, so generated text reaches for "táto rezolúcia" every time the noun reappears. Repeat the bare noun instead, or drop it.
+
+**Before:**
+> Keď si ty otvoríš tvoj účet, tvoja banka bude vyžadovať tvoj doklad o adrese. Tento doklad musíš mať pripravený.
+**After:**
+> Keď si otváraš účet, banka bude pýtať doklad o adrese. Maj ho pripravený.
+
+### 51. English word order carried through translation
+
+These languages use word order to mark what is old and what is new: given information near the front, the new point at the end. English does that job with articles and stress and keeps a fixed subject-verb-object order. Generated text keeps the English order, so the new information lands first and every paragraph finishes flat. The symptom is a run of sentences that all start with their subject and all end on something the reader already knew.
+
+**Before:**
+> Nová rezolúcia bola zverejnená v marci 2026. Táto rezolúcia ukladá novú ohlasovaciu povinnosť rezidentom.
+**After:**
+> V marci 2026 zverejnili novú rezolúciu. Rezidentom z nej vyplýva ohlasovacia povinnosť.
+
+### 52. Register drift between ty and vy
+
+Generated text slides between the informal *ty* and the formal *vy*, sometimes inside one paragraph, because English "you" gives the model nothing to anchor to. Pick whichever form the source opened with and hold it. The drift shows up in verb endings, in possessives (tvoj / váš), and most often in imperatives, where "pozri" and "pozrite" sit two sentences apart. Watch the same drift in the writer's own voice: "vieme ti zariadiť" against "sme schopní zabezpečiť".
+
+### 53. Typography and number conventions
+
+Not style judgments, just rules a translated draft routinely breaks. Fix them on sight:
+
+- Percent signs, currencies, and units take a space, ideally non-breaking: 10 %, 33 USD, 160 GB. Closing it up ("10%") is correct only in an attributive compound (Slovak "10%-ný", Czech "10%ní").
+- Decimal comma, space as the thousands separator: 5 970, 0,7 %, 1,2 milióna. Not 5,970 and not 0.7%.
+- Dates take an ordinal period and a genitive lowercase month: 6. júla 2026, Czech 6. července 2026. Not "6 Júl 2026" and not "July 6, 2026".
+- Months, weekdays, nationality adjectives, and language names are lowercase: júl, pondelok, slovenský, španielčina. Capitals on any of these are an English habit that survived translation.
+- §18 is absolute in these languages. Headings are sentence case, and only proper nouns keep a capital. There is no native title case to fall back on.
+- Check the diacritics: ď ť ň ľ ĺ ŕ ô ä for Slovak, ě ř ů for Czech. A draft with some accents stripped or flattened has been through a pipeline that mangled them, which usually means it has other translation damage too.
+
+### 54. Loanwords: neither over-translated nor under-translated
+
+Established English terms in finance, tech, and compliance stay in English because that is what practitioners say: proof of address, compliance, roaming, self-certification, stablecoin. Generated text errs both ways. It translates the settled term into something nobody uses ("doklad o mieste pobytu na účely overenia totožnosti"), then leaves plain English where a normal word exists ("použi tento tool", "je to challenge"). Match the field, not the dictionary.
+
+The hyphenation in §27 does not transfer either. These languages do not form English-style hyphenated modifiers: write "vysoko kvalitný", not "vysoko-kvalitný".
+
+### What NOT to flag in Slovak and Czech
+
+Adding to the general false-positive list, these are native features, not tells:
+
+- **The reflexive passive** (uvádza sa, vykonáva sa, podáva sa). Standard in legal and administrative register, which is exactly the register most of this text lives in. Flag it only where a specific actor is obvious and available, per §14.
+- **Long sentences with several subordinate clauses.** Normal and readable here. English sentence-length targets do not transfer, and chopping every long sentence into three short ones produces the staccato problem in §32.
+- **„…“ quotation marks and the spaced en dash.** Covered in §45 and §46. Native typography.
+- **Verb-initial or object-initial sentences.** Free word order is a feature being used, not an error to normalize.
+- **Particles and hedging words** (veď, však, teda, predsa, no, vraj, akože). These are ordinary spoken-register markers and usually evidence of a human writing, not filler to scrub. Removing them is one of the fastest ways to make Slovak or Czech prose sound machine-made.
+- **Nielen… ale aj.** A normal construction, unlike its English counterpart in §9. It only counts as a tell when it is stacked with other §9 shapes or repeated across a document.
 
 ## DETECTION GUIDANCE
 
@@ -388,6 +643,8 @@ A clean human writer can hit several of the patterns above without any AI involv
 - **Secondhand text.** Do not rewrite watched phrases inside quotations, titles, proper names, or examples where the phrase is being discussed rather than used.
 
 When in doubt, look for **clusters** of tells, not isolated ones. A single em dash means nothing; em dashes plus rule-of-three plus *vibrant tapestry* plus a "Conclusion" section is a confession.
+
+Count a cluster once. When several weak signals land on the same phrase, a bolded aside set off by an em dash sitting inside a rule-of-three list, that is one strong tell and not three. Weigh it once, and fix it once.
 
 ### Signs of human writing (preserve these)
 
@@ -424,7 +681,7 @@ Invocation Modes above governs delivery format; this governs whether to rewrite 
 1. Read the input carefully and identify every instance of the patterns above.
 2. Write a **draft rewrite**. Check that it reads naturally aloud, varies sentence length, prefers specific details and simple constructions (is/are/has), and keeps the appropriate register.
 3. Ask two questions: **"What makes the below so obviously AI generated?"** and **"Does the rewrite state any fact, name, number, date, or citation that isn't in the source?"** Answer briefly. A fabrication is a defect even when it sounds more human than the vague original.
-4. Revise into a **final rewrite** that addresses them and contains no em or en dashes (see §15).
+4. Revise into a **final rewrite** that addresses them and contains no em or en dashes (see §15, and §46 if the text is Slovak or Czech).
 
 In pasted-text mode, deliver the draft, the brief "still-AI" bullets, the final rewrite, and (optionally) a short summary of changes. In file and embedded modes, run the same loop but deliver only what the mode calls for (see Invocation Modes).
 

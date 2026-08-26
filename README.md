@@ -112,7 +112,7 @@ Ask whether text reads as AI-written and the skill switches to detect mode: it q
 
 > "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
 
-## 35 Patterns Detected (with Before/After Examples)
+## 54 Patterns Detected (with Before/After Examples)
 
 ### Content Patterns
 
@@ -173,6 +173,35 @@ Ask whether text reads as AI-written and the skill switches to detect mode: it q
 | 33 | **Aphorism formulas** | "Symmetry is the language of trust" | Replace the formula with the actual claim |
 | 34 | **Conversational rhetorical openers** | "Honestly? It depends..." | Remove the fake-candid setup |
 | 35 | **Colon-reveal constructions** | "The best part: it learns." | State it as a plain sentence |
+| 36 | **Performed rigor and candor** | "It's worth being precise here", "the honest version is", "we won't undersell it" | Delete the announcement, keep the point |
+| 37 | **Argument residue** | "While some might argue..." rebutting nobody | Cut the phantom rebuttal, state the position |
+| 38 | **Reasoning-chain artifacts** | "Let me break this down. Step 1:" | Delete the scaffolding, keep the conclusion |
+| 39 | **False agency** | "the data tells us", "the market rewards" | Name the actor or state the fact plainly |
+| 40 | **Forensic residue** | `[Your Name]`, `citeturn0search0`, `utm_source=chatgpt.com`, zero-width chars | Strip and normalize to plain NFC text |
+| 41 | **Structural uniformity** | Equal-length sections, all lists of three, a recap per section | Vary depth; apply the paragraph reshuffle test |
+| 42 | **Connective tissue pile-up** | "Additionally... Moreover... Furthermore..." | Let sentence order carry the logic |
+| 43 | **Hedged-enumeration openers** | "There are several factors to consider" | Give the specific answer first |
+| 44 | **Treadmill effect** | Three paragraphs restating one idea | Merge; keep the clearest version |
+
+### Slovak and Czech Text
+
+Applied only when the text is Slovak or Czech. Most AI writing in these languages is a translated English draft, so the tells arrive as loan translations, English punctuation, and English word order. Two of these rules deliberately override the English-only rules above.
+
+| # | Pattern | Before | After |
+|---|---------|--------|-------|
+| 45 | **Quotation marks** (overrides #20) | `„som nepostihnuteľný”` | `„som nepostihnuteľný“` - keep the native low-high pair |
+| 46 | **Dashes** (overrides #15) | `pobyt — a povinnosti — nie je`, `55—85 €` | Cut every em dash; keep the en dash in ranges (`55–85 €`) |
+| 47 | **Copula avoidance** | "cédula predstavuje kľúčový dokument" | "cédula je doklad", or no verb at all |
+| 48 | **Transgressive / participle padding** | "čím zdôraznil... reflektujúc..." | Cut the tail or promote it to a sentence |
+| 49 | **Calqued AI vocabulary** | "kľúčový", "svedčí o", "v dnešnej dobe" | Plain equivalents; watch for clusters |
+| 50 | **Pronoun and possessive spam** | "keď si ty otvoríš tvoj účet" | "keď si otváraš účet" - these languages are pro-drop |
+| 51 | **English word order** | "Nová rezolúcia bola zverejnená v marci" | "V marci zverejnili novú rezolúciu" - new information last |
+| 52 | **ty / vy register drift** | "pozri" and "pozrite" two sentences apart | Pick one form and hold it |
+| 53 | **Typography and numbers** | "10%", "5,970", "July 6, 2026" | "10 %", "5 970", "6. júla 2026" |
+| 54 | **Loanword handling** | "použi tento tool" / over-translated "proof of address" | Match the field's working vocabulary |
+
+The section also carries its own false-positive list: the reflexive passive, long multi-clause sentences, free word order, and particles like *veď* and *však* are native features, not tells.
+
 
 ## Full Example
 
@@ -209,9 +238,12 @@ Ask whether text reads as AI-written and the skill switches to detect mode: it q
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) - Primary source
 - [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup) - Maintaining organization
 - [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) (MIT, © Peter Yang) - Inspired the colon-reveal pattern (#35), the "delete rather than repolish" fix for mic-drop closers (#33), and detect mode's no-score stance
+- [Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill) (MIT) - Source for argument residue (#37), reasoning-chain artifacts (#38), false agency (#39), the forensic-residue checklist (#40), and hedged-enumeration openers (#43), which it grounds in the [HC3 corpus](https://arxiv.org/abs/2301.07597)
+- [jpeggdev/humanize-writing](https://github.com/jpeggdev/humanize-writing) (MIT) - Source for structural uniformity (#41), the connective-tissue pile-up rule (#42), the treadmill effect (#44), and the "count a cluster once" consolidation principle in detection guidance
 
 ## Version History
 
+- **2.11.0** - Added pattern #36 (performed rigor and candor): text that announces its own precision, fairness, or honesty ("it's worth being precise here", "deserves verification, not just assertion", "the honest version is", "we won't undersell it", "we say it plainly") instead of delivering it. Extended #33 to cover portentous shorthand, where a concrete fact is swapped for an ominous possession ("it already has a date"). Imported #37-44 from other MIT-licensed humanizer projects (credited under References): argument residue, reasoning-chain artifacts, false agency, forensic residue, structural uniformity, connective-tissue pile-up, hedged-enumeration openers, and the treadmill effect. #41 is the skill's first structural rule, covering the paragraph reshuffle test. Added a Slovak and Czech section (#45-54) with its own false-positive list, because AI text in these languages is usually a translated English draft: #45 and #46 override the curly-quote and en-dash rules, which are wrong for native typography, and the rest cover copula avoidance (*predstavuje*), transgressive padding, calqued vocabulary, pro-drop violations, English word order, ty/vy drift, number and date conventions, and loanword handling. `SKILL.md`'s line budget rose from 500 to 800. 54 patterns total.
 - **2.10.0** - Added pattern #35 (colon-reveal constructions) and a Detect Mode that quotes offending patterns instead of rewriting and never outputs an AI-probability score; expanded #34 with more faux-insight/rhetorical-setup phrasing and #33 with a delete-don't-repolish instruction for mic-drop closers. Ideas credited to [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) (MIT). 35 patterns total.
 - **2.9.2** - Merged upstream's no-fabrication rule, invocation modes, and portability cleanup (nonportable frontmatter removed, package validation added) while keeping this fork's 34th pattern (staccato contrast) and the full worked example in the README. Fixed a long-standing README table that mislabeled several filler/hedging patterns as style patterns. No change to the 34 patterns.
 - **2.9.1** - Improved distribution and portability: removed nonportable frontmatter and tool preapprovals, made global installation the documented default, added package validation, and removed the duplicated long-form example from the runtime prompt (kept in this README instead). No change to the 34 patterns.

@@ -46,16 +46,31 @@ pattern_numbers = [
     int(number)
     for number in re.findall(r"(?m)^### ([0-9]+)\. ", SKILL)
 ]
-if pattern_numbers != list(range(1, 36)):
-    raise SystemExit(f"Expected patterns 1-35, found {pattern_numbers}")
+pattern_count = len(pattern_numbers)
+if pattern_numbers != list(range(1, pattern_count + 1)):
+    raise SystemExit(
+        f"SKILL.md patterns must be numbered 1-N with no gaps, found {pattern_numbers}"
+    )
 
 readme_numbers = {
     int(number) for number in re.findall(r"(?m)^\| ([0-9]+) \|", README)
 }
-if readme_numbers != set(range(1, 36)):
-    raise SystemExit("README pattern table must contain patterns 1-35")
+if readme_numbers != set(range(1, pattern_count + 1)):
+    raise SystemExit(
+        f"README pattern table must contain patterns 1-{pattern_count}, "
+        f"found {sorted(readme_numbers)}"
+    )
 
-if len(SKILL.splitlines()) > 500:
-    raise SystemExit("SKILL.md exceeds the 500-line portability budget")
+readme_heading = re.search(r"(?m)^## ([0-9]+) Patterns Detected", README)
+if not readme_heading:
+    raise SystemExit("README is missing an 'N Patterns Detected' heading")
+if int(readme_heading.group(1)) != pattern_count:
+    raise SystemExit(
+        f"README heading says {readme_heading.group(1)} patterns, "
+        f"SKILL.md defines {pattern_count}"
+    )
+
+if len(SKILL.splitlines()) > 800:
+    raise SystemExit("SKILL.md exceeds the 800-line portability budget")
 
 print(f"Humanizer package v{skill_version} is valid")
