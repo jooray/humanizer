@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Guidance for AI coding agents (Claude Code, Codex, Warp, etc.) working in this repository.
+Guidance for AI coding agents (Claude Code, OpenCode, Codex, etc.) working in this repository.
 
 ## What this repo is
 
