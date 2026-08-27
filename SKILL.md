@@ -12,7 +12,7 @@ description: |
   order rules.
 license: MIT
 metadata:
-  version: "2.11.0"
+  version: "2.11.1"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -388,7 +388,7 @@ A second shape belongs here: portentous shorthand, where a concrete fact the wri
 
 ### 36. Performed Rigor and Candor
 
-**Phrases to watch:** it's worth being precise/exact/careful here, it's worth distinguishing, this deserves verification and not just assertion, to be precise, to be fair, in fairness, let's be accurate, I want to be careful here, the honest version is, the honest answer is, the fair reading is, we won't undersell/oversell/downplay this, we're not going to sugarcoat it, we say it plainly, no spin, to put it bluntly, credit where it's due
+**Phrases to watch:** it's worth being precise/exact/careful here, it's worth distinguishing, this deserves verification and not just assertion, to be precise, to be fair, in fairness, let's be accurate, I want to be careful here, the honest version is, the honest answer is, the fair reading is, we won't undersell/oversell/downplay this, we're not going to sugarcoat it, we say it plainly, no spin, to put it bluntly, credit where it's due, let's say the quiet part out loud, this needs to be said out loud, it has to be said, let's name it
 **Problem:** The writer announces that they are being careful, fair, or honest instead of being those things. Precision performed is not precision delivered: the distinction or caveat that follows lands harder without a preamble certifying its integrity, and often the preamble is the whole move with nothing behind it. Distinct from §29, which announces *what* is coming rather than how virtuously it is being done, and from §25, which weakens a claim rather than decorating it with the writer's good faith.
 **Rule:** Delete the announcement, keep what follows. If nothing substantive follows, cut the sentence. Never swap one certificate of honesty for a better-worded one.
 
@@ -571,6 +571,13 @@ The transgressive is archaic in modern Slovak and bookish in Czech; almost nobod
 The §7 list, loan-translated. Watch for: **kľúčový** (key), **zásadný / rozhodujúci** (crucial), **výrazne / významne** (significantly), **komplexný** (comprehensive, and frequently a mistranslation of "complex"), **robustný**, **dynamický**, **inovatívny**, **prelomový** (groundbreaking), **fascinujúci**, **pulzujúci / živý** (vibrant), **bohatý** in the figurative sense (rich), **rozmanitý** (diverse), **dychberúci** (breathtaking), **nachádza sa v srdci** (in the heart of), **svedčí o** (is a testament to), **zohráva kľúčovú úlohu** (plays a key role), **podčiarkuje význam** (underscores the importance), **v dnešnej dobe** (in today's world), **digitálna éra**, **neustále sa vyvíjajúci** (ever-evolving), **je dôležité poznamenať** (it is important to note), **treba zdôrazniť**, **v neposlednom rade** (last but not least), **nepopierateľne** (undeniably), **na mieru** (tailored), **poďme sa pozrieť** (let's take a look).
 
 The §7 caveat holds and matters more here, because several of these are ordinary words in journalism and administrative writing. One "kľúčový" is nothing. Three in a paragraph, next to a "svedčí o" and a "v dnešnej dobe", is the tell.
+
+Phrases from other sections arrive calqued too. The commonest is §36's candor preamble: **treba to povedať nahlas**, **povedzme to nahlas**, **povedzme si to otvorene**, announcing that the next sentence is brave before delivering an ordinary claim. Cut the preamble and keep the claim.
+
+**Before:**
+> Toto treba povedať nahlas: register chráni údaje pred verejnosťou, nie pred štátom.
+**After:**
+> Register chráni údaje pred verejnosťou, nie pred štátom.
 
 ### 50. Pronoun and possessive spam
 
