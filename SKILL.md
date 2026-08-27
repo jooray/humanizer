@@ -12,7 +12,7 @@ description: |
   order rules.
 license: MIT
 metadata:
-  version: "2.12.0"
+  version: "2.12.1"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -321,8 +321,8 @@ This rule is English-only. In Slovak and Czech the curly low-high pair is correc
 
 ### 29. Signposting and Announcements
 
-**Phrases to watch:** Let's dive in, let's explore, let's break this down, here's what you need to know, now let's look at, without further ado, heads up, quick note, before I forget, one thing that bit me, pay attention to this part
-**Problem:** LLMs announce what they are about to do instead of doing it. This meta-commentary slows the writing down and gives it a tutorial-script feel. The casual register is the same move in friendlier clothes: "one thing that bit me hard, so pay attention to this part" is still a trailer for the sentence after it. Remove the announcement rather than just its formality.
+**Phrases to watch:** Let's dive in, let's explore, let's break this down, here's what you need to know, now let's look at, without further ado, heads up, quick note, before I forget, one thing that bit me, pay attention to this part, one caveat first, a note on methodology before we start, before we get to the numbers
+**Problem:** LLMs announce what they are about to do instead of doing it. This meta-commentary slows the writing down and gives it a tutorial-script feel. The casual register is the same move in friendlier clothes: "one thing that bit me hard, so pay attention to this part" is still a trailer for the sentence after it. The analytical register does it in a noun phrase instead of an invitation ("one caveat up front"), which §36 covers. Remove the announcement rather than just its formality.
 **Before:**
 > Let's dive into how caching works in Next.js. Here's what you need to know.
 **After:**
@@ -397,7 +397,7 @@ A second shape belongs here: portentous shorthand, where a concrete fact the wri
 
 ### 36. Performed Rigor and Candor
 
-**Phrases to watch:** it's worth being precise/exact/careful here, it's worth distinguishing, this deserves verification and not just assertion, to be precise, to be fair, in fairness, let's be accurate, I want to be careful here, the honest version is, the honest answer is, the fair reading is, we won't undersell/oversell/downplay this, we're not going to sugarcoat it, we say it plainly, no spin, to put it bluntly, credit where it's due, let's say the quiet part out loud, this needs to be said out loud, it has to be said, let's name it
+**Phrases to watch:** it's worth being precise/exact/careful here, it's worth distinguishing, this deserves verification and not just assertion, to be precise, to be fair, in fairness, let's be accurate, I want to be careful here, the honest version is, the honest answer is, the fair reading is, we won't undersell/oversell/downplay this, we're not going to sugarcoat it, we say it plainly, no spin, to put it bluntly, credit where it's due, let's say the quiet part out loud, this needs to be said out loud, it has to be said, let's name it, one caveat up front, a caveat that has to sit up front, one caveat before we start, one thing to flag up front, worth flagging up front, an important qualification first, a note on methodology before we get to the numbers
 **Problem:** The writer announces that they are being careful, fair, or honest instead of being those things. Precision performed is not precision delivered: the distinction or caveat that follows lands harder without a preamble certifying its integrity, and often the preamble is the whole move with nothing behind it. Distinct from §29, which announces *what* is coming rather than how virtuously it is being done, and from §25, which weakens a claim rather than decorating it with the writer's good faith.
 **Rule:** Delete the announcement, keep what follows. If nothing substantive follows, cut the sentence. Never swap one certificate of honesty for a better-worded one.
 
@@ -425,6 +425,12 @@ A second shape belongs here: portentous shorthand, where a concrete fact the wri
 > It is a real advantage. The section below gives the date it ends.
 
 (That last one also drops "plainly." Announcing that the next section is candid implies the rest of the document was not.)
+
+**The announced caveat.** The same move also arrives as a noun phrase with no main verb, which is why the verbal phrases above do not catch it: "One caveat that has to sit up front," "A qualification before we get to the numbers." The sentence names a caveat, asserts that it must come first, and then defers the caveat itself to the sentence after. The modal is the tell: a writer who has a caveat states it, and does not first rule on where it has to sit. Cut the announcement and let the caveat be the sentence. A caveat that is stated stays; a sentence whose only content is that a caveat is coming does not.
+**Before:**
+> One caveat that has to sit up front, because it makes the model comparison less clean than it looks. The two runs used different context windows.
+**After:**
+> The two runs used different context windows, so the two models are not being compared on equal terms.
 
 ### 37. Argument Residue
 
@@ -660,7 +666,7 @@ A clean human writer can hit several of the patterns above without any AI involv
 - **One short emphatic sentence.** Humans use clipped sentences to land a point. Flag staccato drama only when several short fragments appear in a row and inflate the tone.
 - **"Honestly" or "look" mid-sentence.** These are ordinary in casual writing. The tell is the standalone theatrical opener, not the word itself.
 - **Deliberate repeated openings.** Writers repeat an opening to build rhythm or pressure: "She came. She saw. She conquered." §12 applies when the repetition does nothing, not whenever it occurs.
-- **Useful limits and disclaimers.** Scope statements, legal and safety notices, genuine corrections, named objections and the replies to them, and FAQ answers all stay. §37 removes the defense with no attacker, not every caveat.
+- **Useful limits and disclaimers.** Scope statements, legal and safety notices, genuine corrections, named objections and the replies to them, and FAQ answers all stay. §37 removes the defense with no attacker, not every caveat. This protects a caveat that is *stated*; a sentence whose only content is that a caveat is coming is the announced caveat under §36, and it goes.
 - **Real alternatives.** A design document, tutorial, or argument is supposed to weigh options the reader might actually pick. Cut only the unlikely option raised so it can be dismissed and never used again.
 - **Unsourced claims.** Most of the web is unsourced. Lack of citations doesn't prove anything.
 - **Correct, complex formatting.** Visual editors and templates produce clean output without any AI.
