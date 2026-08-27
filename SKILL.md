@@ -12,7 +12,7 @@ description: |
   order rules.
 license: MIT
 metadata:
-  version: "2.11.1"
+  version: "2.12.0"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -116,7 +116,7 @@ When voice is appropriate, avoid uniform sentence structures, bloodless neutrali
 
 ### 7. Overused "AI Vocabulary" Words
 
-**High-frequency AI words:** Actually, additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), pivotal, showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
+**High-frequency AI words:** Actually, additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, gate/gated/gating (figurative only; keep the established technical sense), highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), pivotal, quietly, showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
 **Problem:** These words appear far more frequently in post-2023 text. They often co-occur.
 **Before:**
 > Additionally, a distinctive feature of Somali cuisine is the incorporation of camel meat. An enduring testament to Italian colonial influence is the widespread adoption of pasta in the local culinary landscape, showcasing how these dishes have integrated into the traditional diet.
@@ -161,12 +161,17 @@ When voice is appropriate, avoid uniform sentence structures, bloodless neutrali
 **After:**
 > SimpleX takes a different approach to privacy than Telegram or WhatsApp.
 
-### 12. Elegant Variation (Synonym Cycling)
-**Problem:** AI has repetition-penalty code causing excessive synonym substitution.
-**Before:**
+### 12. Elegant Variation and Repeated Sentence Openings
+**Problem:** Repetition penalties make the model handle recurrence by rule instead of by ear, and it fails in both directions. Either the same subject is renamed every time it appears, or several consecutive sentences open with the same subject (often *she* or *he*) because nothing pushed the shape to change.
+**Rule:** Use one clear name for one thing. For repeated openings, merge the sentences, move the subject, or lead with the action. Do not ban the repeated word; fix the repeated sentence shape. The sentence that survives may still start with "She."
+**Before (synonym cycling):**
 > The protagonist faces many challenges. The main character must overcome obstacles. The central figure eventually triumphs. The hero returns home.
 **After:**
 > The protagonist faces many challenges but eventually triumphs and returns home.
+**Before (repeated openings):**
+> She noted the door. She noted the lock on it. She filed both away.
+**After:**
+> She noted the door and its lock, then filed both away.
 
 ### 13. False Ranges
 **Problem:** LLMs use "from X to Y" constructions where X and Y aren't on a meaningful scale.
@@ -316,12 +321,16 @@ This rule is English-only. In Slovak and Czech the curly low-high pair is correc
 
 ### 29. Signposting and Announcements
 
-**Phrases to watch:** Let's dive in, let's explore, let's break this down, here's what you need to know, now let's look at, without further ado
-**Problem:** LLMs announce what they are about to do instead of doing it. This meta-commentary slows the writing down and gives it a tutorial-script feel.
+**Phrases to watch:** Let's dive in, let's explore, let's break this down, here's what you need to know, now let's look at, without further ado, heads up, quick note, before I forget, one thing that bit me, pay attention to this part
+**Problem:** LLMs announce what they are about to do instead of doing it. This meta-commentary slows the writing down and gives it a tutorial-script feel. The casual register is the same move in friendlier clothes: "one thing that bit me hard, so pay attention to this part" is still a trailer for the sentence after it. Remove the announcement rather than just its formality.
 **Before:**
 > Let's dive into how caching works in Next.js. Here's what you need to know.
 **After:**
 > Next.js caches data at multiple layers, including request memoization, the data cache, and the router cache.
+**Before (casual register):**
+> One thing that bit me hard, so pay attention to this part: the webpack dev server doesn't send the CORS header by default.
+**After:**
+> The webpack dev server doesn't send the CORS header by default.
 
 ### 30. Fragmented Headers
 
@@ -419,13 +428,18 @@ A second shape belongs here: portentous shorthand, where a concrete fact the wri
 
 ### 37. Argument Residue
 
-**Phrases to watch:** while some might argue, it would be easy to dismiss this as, one might object that... but, critics may claim, some will say, it's tempting to think, detractors point to
-**Problem:** A rebuttal to an objection nobody raised. The model drafted through more than one position before settling, and the discarded counterargument survives as a phantom opponent. The tell is structural rather than lexical: the sentence is shaped as a reply, but the claim it replies to appears nowhere else in the piece.
-**Rule:** Cut the phantom rebuttal and state the position directly. Keep it only when the objection is real and named in the text, or when an identifiable person actually made it. Related to §36: both are drafting residue, one leaving the writer's self-assessment in the text and the other leaving the writer's discarded opposition.
+**Phrases to watch:** while some might argue, it would be easy to dismiss this as, one might object that... but, critics may claim, some will say, it's tempting to think, detractors point to, this isn't really/mainly about, I'm not saying/arguing/trying to, to be clear, don't get me wrong, this is not to say
+**Rejected-option variant:** a tempting approach would be, one might be tempted to, an obvious approach would be, you might think... but, it would be easy to just, some would suggest
+**Problem:** A rebuttal to an objection nobody raised, or the rejection of an option nobody proposed. The model drafted through more than one position before settling, and the discarded side survives as a phantom opponent. The tell is structural rather than lexical: the sentence is shaped as a reply, but the claim it replies to appears nowhere else in the piece. The option variant puts a solution in the opponent's slot instead of an argument, raising it in one clause, killing it in the next, and never returning to it.
+**Rule:** Cut the phantom rebuttal and state the position directly. Cut the rejected option and state the real constraint. Keep either one when it is real: the objection is named in the text or an identifiable person made it, or the option is one a reader of that design document or tutorial would genuinely weigh. Remove only the unsupported defense, and where it carries a real claim, state that claim on its own. A single rejected option can be legitimate; several short unrelated rejections in a row are drafting residue. Related to §36: both leave drafting behind, one the writer's self-assessment and the other the writer's discarded opposition.
 **Before:**
 > While some might argue that territorial taxation is a loophole, it is simply how the statute defines taxable income.
 **After:**
 > The statute defines taxable income as income from local sources, so foreign income falls outside it.
+**Before (rejected option):**
+> Session tokens rotate every 24 hours. A tempting approach would be to rotate them by restarting the auth service on a cron job, but that would drop every active session. Rotation happens in place, and clients refresh transparently.
+**After:**
+> Session tokens rotate every 24 hours, in place, and clients refresh transparently.
 
 ### 38. Reasoning-Chain Artifacts
 
@@ -645,6 +659,9 @@ A clean human writer can hit several of the patterns above without any AI involv
 - **Em dashes alone.** Many editors and journalists use them often. Em dashes are evidence only when paired with formulaic sales-y rhythm.
 - **One short emphatic sentence.** Humans use clipped sentences to land a point. Flag staccato drama only when several short fragments appear in a row and inflate the tone.
 - **"Honestly" or "look" mid-sentence.** These are ordinary in casual writing. The tell is the standalone theatrical opener, not the word itself.
+- **Deliberate repeated openings.** Writers repeat an opening to build rhythm or pressure: "She came. She saw. She conquered." §12 applies when the repetition does nothing, not whenever it occurs.
+- **Useful limits and disclaimers.** Scope statements, legal and safety notices, genuine corrections, named objections and the replies to them, and FAQ answers all stay. §37 removes the defense with no attacker, not every caveat.
+- **Real alternatives.** A design document, tutorial, or argument is supposed to weigh options the reader might actually pick. Cut only the unlikely option raised so it can be dismissed and never used again.
 - **Unsourced claims.** Most of the web is unsourced. Lack of citations doesn't prove anything.
 - **Correct, complex formatting.** Visual editors and templates produce clean output without any AI.
 - **Secondhand text.** Do not rewrite watched phrases inside quotations, titles, proper names, or examples where the phrase is being discussed rather than used.
@@ -687,7 +704,7 @@ Invocation Modes above governs delivery format; this governs whether to rewrite 
 
 1. Read the input carefully and identify every instance of the patterns above.
 2. Write a **draft rewrite**. Check that it reads naturally aloud, varies sentence length, prefers specific details and simple constructions (is/are/has), and keeps the appropriate register.
-3. Ask two questions: **"What makes the below so obviously AI generated?"** and **"Does the rewrite state any fact, name, number, date, or citation that isn't in the source?"** Answer briefly. A fabrication is a defect even when it sounds more human than the vague original.
+3. Ask two questions: **"What makes the below so obviously AI generated?"** and **"Does the rewrite state any fact, name, number, date, quote, citation, or ranking that isn't in the source, or drop a claim that was?"** Answer briefly. A fabrication is a defect even when it sounds more human than the vague original, and a lost claim is a defect even when the rewrite reads better without it.
 4. Revise into a **final rewrite** that addresses them and contains no em or en dashes (see §15, and §46 if the text is Slovak or Czech).
 
 In pasted-text mode, deliver the draft, the brief "still-AI" bullets, the final rewrite, and (optionally) a short summary of changes. In file and embedded modes, run the same loop but deliver only what the mode calls for (see Invocation Modes).

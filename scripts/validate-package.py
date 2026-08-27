@@ -9,9 +9,12 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent.parent
-SKILL = (ROOT / "SKILL.md").read_text()
-README = (ROOT / "README.md").read_text()
-PLUGIN = json.loads((ROOT / ".claude-plugin" / "plugin.json").read_text())
+SKILL_PATH = ROOT / "SKILL.md"
+SKILL = SKILL_PATH.read_text(encoding="utf-8")
+README = (ROOT / "README.md").read_text(encoding="utf-8")
+PLUGIN = json.loads(
+    (ROOT / ".claude-plugin" / "plugin.json").read_text(encoding="utf-8")
+)
 
 
 def require(match: re.Match[str] | None, message: str) -> re.Match[str]:
@@ -41,6 +44,12 @@ readme_version = require(
 versions = {skill_version, readme_version, str(PLUGIN.get("version", ""))}
 if len(versions) != 1:
     raise SystemExit(f"Version mismatch: {sorted(versions)}")
+
+skill_files = {path.relative_to(ROOT) for path in ROOT.rglob("SKILL.md")}
+if SKILL_PATH.is_symlink() or skill_files != {Path("SKILL.md")}:
+    raise SystemExit("Keep exactly one regular SKILL.md at the repo root")
+if PLUGIN.get("skills") != ["./"]:
+    raise SystemExit('plugin.json must set "skills": ["./"] for Claude plugin discovery')
 
 pattern_numbers = [
     int(number)

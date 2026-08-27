@@ -32,6 +32,16 @@ To target one configured harness, pass its agent name:
 npx skills add jooray/humanizer --global --agent <agent-name>
 ```
 
+Copy-paste versions for three common harnesses:
+
+```bash
+npx skills add jooray/humanizer --global --agent opencode
+npx skills add jooray/humanizer --global --agent codex
+npx skills add jooray/humanizer --global --agent pi
+```
+
+Pi also discovers globally installed skills from `~/.pi/agent/skills/`; invoke Humanizer with `/skill:humanizer` or just ask Pi to humanize text.
+
 Omit `--global` for a project-local install that can be committed and shared with collaborators. Start a new agent session or reload skills after installation.
 
 ### Claude Code plugin
@@ -134,7 +144,7 @@ Ask whether text reads as AI-written and the skill switches to detect mode: it q
 | 9 | **Negative parallelisms / tailing negations** | "It's not just X, it's Y", "..., no guessing" | State the point directly |
 | 10 | **Rule of three** | "innovation, inspiration, and insights" | Use natural number of items |
 | 11 | **Staccato contrast** | "SimpleX. Not Telegram. Not WhatsApp." | State the contrast in one sentence |
-| 12 | **Synonym cycling** | "protagonist... main character... central figure... hero" | "protagonist" (repeat when clearest) |
+| 12 | **Synonym cycling / repeated openings** | "protagonist... main character... central figure"; "She noted. She noted. She filed." | One name for one thing; merge or reshape the repeated opening |
 | 13 | **False ranges** | "from the Big Bang to dark matter" | List topics directly |
 | 14 | **Passive voice / subjectless fragments** | "No configuration file needed" | Name the actor when it helps clarity |
 
@@ -166,7 +176,7 @@ Ask whether text reads as AI-written and the skill switches to detect mode: it q
 | 26 | **Generic conclusions** | "The future looks bright" | Specific plans or facts |
 | 27 | **Hyphenated word pairs** | "cross-functional, data-driven, client-facing" | Drop hyphens on common word pairs |
 | 28 | **Persuasive authority tropes** | "At its core, what matters is..." | State the point directly |
-| 29 | **Signposting announcements** | "Let's dive in", "Here's what you need to know" | Start with the content |
+| 29 | **Signposting announcements** | "Let's dive in", "Here's what you need to know", "one thing that bit me, so pay attention" | Start with the content |
 | 30 | **Fragmented headers** | "## Performance" + "Speed matters." | Let the heading do the work |
 | 31 | **Diff-anchored writing** | "This function was added to replace..." | Describe what it does, not what changed |
 | 32 | **Manufactured punchlines / staccato drama** | "It had no preference. No prior. No nostalgia." | Use varied sentence lengths and concrete claims |
@@ -174,7 +184,7 @@ Ask whether text reads as AI-written and the skill switches to detect mode: it q
 | 34 | **Conversational rhetorical openers** | "Honestly? It depends..." | Remove the fake-candid setup |
 | 35 | **Colon-reveal constructions** | "The best part: it learns." | State it as a plain sentence |
 | 36 | **Performed rigor and candor** | "It's worth being precise here", "the honest version is", "let's say the quiet part out loud" | Delete the announcement, keep the point |
-| 37 | **Argument residue** | "While some might argue..." rebutting nobody | Cut the phantom rebuttal, state the position |
+| 37 | **Argument residue** | "While some might argue..." rebutting nobody; "a tempting approach would be..." rejecting an option nobody proposed | Cut the phantom rebuttal or option, state the position |
 | 38 | **Reasoning-chain artifacts** | "Let me break this down. Step 1:" | Delete the scaffolding, keep the conclusion |
 | 39 | **False agency** | "the data tells us", "the market rewards" | Name the actor or state the fact plainly |
 | 40 | **Forensic residue** | `[Your Name]`, `citeturn0search0`, `utm_source=chatgpt.com`, zero-width chars | Strip and normalize to plain NFC text |
@@ -243,6 +253,7 @@ The section also carries its own false-positive list: the reflexive passive, lon
 
 ## Version History
 
+- **2.12.0** - Merged the parts of upstream `blader/humanizer` (through 2.11.2) that this fork was missing, and the OpenCode/Codex/Pi install commands from [@aljazceru](https://github.com/aljazceru). Upstream's 2.11.0 rewrote its whole prompt in Plain Language; that rewrite is deliberately not taken, because it renumbers to 35 patterns and would drop #36-54. Content taken instead: `gated` (figurative) and `quietly` join the #7 vocabulary list; #12 now covers repeated sentence openings as well as synonym cycling, with the caveat that the repeated *word* is not the defect; #29 covers casual-register announcements ("one thing that bit me, so pay attention to this part"), which used to escape because only the formal phrasings were listed; #37 absorbs upstream's rejected-fake-alternatives pattern, the same drafting residue with a discarded option in place of a discarded objection. Three false-positive guards added: deliberate repeated openings, useful disclaimers, and alternatives a reader would really weigh. The final audit now also asks whether the rewrite *lost* a claim. Packaging: `plugin.json` gains `"skills": ["./"]` so Claude plugin installs find the skill at the repo root, and the validator reads files as UTF-8 (fixing validation on Windows-default encodings) and checks both. No change to the 54 patterns.
 - **2.11.1** - Extended #36 to name the candor preamble that says the next sentence out loud ("let's say the quiet part out loud", "this needs to be said out loud", "it has to be said", "let's name it"). The rule already covered these, but the trigger list did not, so they survived edits. Added the Slovak and Czech calque of the same move ("toto treba povedať nahlas", "povedzme si to otvorene") to #49. No change to the 54 patterns.
 - **2.11.0** - Added pattern #36 (performed rigor and candor): text that announces its own precision, fairness, or honesty ("it's worth being precise here", "deserves verification, not just assertion", "the honest version is", "we won't undersell it", "we say it plainly") instead of delivering it. Extended #33 to cover portentous shorthand, where a concrete fact is swapped for an ominous possession ("it already has a date"). Imported #37-44 from other MIT-licensed humanizer projects (credited under References): argument residue, reasoning-chain artifacts, false agency, forensic residue, structural uniformity, connective-tissue pile-up, hedged-enumeration openers, and the treadmill effect. #41 is the skill's first structural rule, covering the paragraph reshuffle test. Added a Slovak and Czech section (#45-54) with its own false-positive list, because AI text in these languages is usually a translated English draft: #45 and #46 override the curly-quote and en-dash rules, which are wrong for native typography, and the rest cover copula avoidance (*predstavuje*), transgressive padding, calqued vocabulary, pro-drop violations, English word order, ty/vy drift, number and date conventions, and loanword handling. `SKILL.md`'s line budget rose from 500 to 800. 54 patterns total.
 - **2.10.0** - Added pattern #35 (colon-reveal constructions) and a Detect Mode that quotes offending patterns instead of rewriting and never outputs an AI-probability score; expanded #34 with more faux-insight/rhetorical-setup phrasing and #33 with a delete-don't-repolish instruction for mic-drop closers. Ideas credited to [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) (MIT). 35 patterns total.
