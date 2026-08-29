@@ -12,7 +12,7 @@ description: |
   order rules.
 license: MIT
 metadata:
-  version: "2.12.2"
+  version: "2.12.3"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -405,7 +405,7 @@ A second shape belongs here: portentous shorthand, where a concrete fact the wri
 
 ### 36. Performed Rigor and Candor
 
-**Phrases to watch:** it's worth being precise/exact/careful here, it's worth distinguishing, this deserves verification and not just assertion, to be precise, to be fair, in fairness, let's be accurate, I want to be careful here, the honest version is, the honest answer is, the fair reading is, we won't undersell/oversell/downplay this, we're not going to sugarcoat it, we say it plainly, no spin, to put it bluntly, credit where it's due, let's say the quiet part out loud, this needs to be said out loud, it has to be said, let's name it, one caveat up front, a caveat that has to sit up front, one caveat before we start, one thing to flag up front, worth flagging up front, an important qualification first, a note on methodology before we get to the numbers, in one specific way, in a very specific sense, in one particular way, for one specific reason, there is a precise reason for this
+**Phrases to watch:** it's worth being precise/exact/careful here, it's worth distinguishing, this deserves verification and not just assertion, to be precise, to be fair, in fairness, let's be accurate, I want to be careful here, the honest version is, the honest answer is, the fair reading is, we won't undersell/oversell/downplay this, we're not going to sugarcoat it, we say it plainly, no spin, to put it bluntly, credit where it's due, let's say the quiet part out loud, this needs to be said out loud, it has to be said, let's name it, one caveat up front, a caveat that has to sit up front, one caveat before we start, one thing to flag up front, worth flagging up front, an important qualification first, a note on methodology before we get to the numbers, in one specific way, in a very specific sense, in one particular way, for one specific reason, there is a precise reason for this, it is worth stating, it is worth noting, it is worth saying, worth mentioning, it bears repeating, this needs saying, this is worth spelling out
 **Problem:** The writer announces that they are being careful, fair, or honest instead of being those things. Precision performed is not precision delivered: the distinction or caveat that follows lands harder without a preamble certifying its integrity, and often the preamble is the whole move with nothing behind it. Distinct from §29, which announces *what* is coming rather than how virtuously it is being done, and from §25, which weakens a claim rather than decorating it with the writer's good faith.
 **Rule:** Delete the announcement, keep what follows. If nothing substantive follows, cut the sentence. Never swap one certificate of honesty for a better-worded one.
 
@@ -447,6 +447,12 @@ A second shape belongs here: portentous shorthand, where a concrete fact the wri
 > The second run used a larger context window.
 
 (*Specific* is fine when the specifics are present: "the specific error is ENOSPC" names the error.)
+
+**The worth-saying certificate.** *It is worth stating*, *it is worth noting*, *it bears repeating*, *this needs saying*. The writer rules that a claim deserves to be made and then makes it, but writing it down had already settled that. §24 catches the sentence-initial filler version ("It is important to note that the data shows"); this is the same move in the appended slot that §1's significance stamp occupies, and the two are interchangeable at the end of a sentence. Cut the certificate and keep the claim. Where the certificate is the whole sentence, the claim is in the next one and belongs first.
+**Before:**
+> There is a trap in the reference implementation, and it is worth stating: it retries forever on a 500.
+**After:**
+> The reference implementation retries forever on a 500.
 
 ### 37. Argument Residue
 
