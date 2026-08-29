@@ -12,7 +12,7 @@ description: |
   order rules.
 license: MIT
 metadata:
-  version: "2.12.1"
+  version: "2.12.2"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -52,12 +52,20 @@ When voice is appropriate, avoid uniform sentence structures, bloodless neutrali
 
 ### 1. Undue Emphasis on Significance, Legacy, and Broader Trends
 
-**Words to watch:** stands/serves as, is a testament/reminder, a vital/significant/crucial/pivotal/key role/moment, underscores/highlights its importance/significance, reflects broader, symbolizing its ongoing/enduring/lasting, contributing to the, setting the stage for, marking/shaping the, represents/marks a shift, key turning point, evolving landscape, focal point, indelible mark, deeply rooted
+**Words to watch:** stands/serves as, is a testament/reminder, a vital/significant/crucial/pivotal/key role/moment, underscores/highlights its importance/significance, reflects broader, symbolizing its ongoing/enduring/lasting, contributing to the, setting the stage for, marking/shaping the, represents/marks a shift, key turning point, evolving landscape, focal point, indelible mark, deeply rooted, and that matters, and the way/difference/distinction matters, which matters more than it sounds, and that is not academic
 **Problem:** LLM writing puffs up importance by adding statements about how arbitrary aspects represent or contribute to a broader topic.
 **Before:**
 > The Statistical Institute of Catalonia was officially established in 1989, marking a pivotal moment in the evolution of regional statistics in Spain. This initiative was part of a broader movement across Spain to decentralize administrative functions and enhance regional governance.
 **After:**
 > The Statistical Institute of Catalonia was established in 1989, part of a wider decentralization of administrative functions in Spain.
+
+**The appended significance stamp.** The list above is the encyclopedic register. The conversational one tacks a short clause onto the end of a sentence to tell the reader the sentence counted: "and the way matters", "and that distinction matters", "and it is not just academic". The clause carries no information, it grades the sentence it is attached to, and it is usually attached to a claim the reader could weigh unaided. Cut it. Where the source says *why* it matters, put that consequence in instead; where it doesn't, the point stands on its own.
+**Before:**
+> The two libraries differ in one specific way, and the way matters: one retries the whole batch, the other only the failed rows.
+**After:**
+> One library retries the whole batch, the other only the failed rows.
+
+(A sentence that says something matters *and then says what follows from it* is doing real work. The tell is the bare stamp with nothing behind it.)
 
 ### 2. Undue Emphasis on Notability and Media Coverage
 
@@ -397,7 +405,7 @@ A second shape belongs here: portentous shorthand, where a concrete fact the wri
 
 ### 36. Performed Rigor and Candor
 
-**Phrases to watch:** it's worth being precise/exact/careful here, it's worth distinguishing, this deserves verification and not just assertion, to be precise, to be fair, in fairness, let's be accurate, I want to be careful here, the honest version is, the honest answer is, the fair reading is, we won't undersell/oversell/downplay this, we're not going to sugarcoat it, we say it plainly, no spin, to put it bluntly, credit where it's due, let's say the quiet part out loud, this needs to be said out loud, it has to be said, let's name it, one caveat up front, a caveat that has to sit up front, one caveat before we start, one thing to flag up front, worth flagging up front, an important qualification first, a note on methodology before we get to the numbers
+**Phrases to watch:** it's worth being precise/exact/careful here, it's worth distinguishing, this deserves verification and not just assertion, to be precise, to be fair, in fairness, let's be accurate, I want to be careful here, the honest version is, the honest answer is, the fair reading is, we won't undersell/oversell/downplay this, we're not going to sugarcoat it, we say it plainly, no spin, to put it bluntly, credit where it's due, let's say the quiet part out loud, this needs to be said out loud, it has to be said, let's name it, one caveat up front, a caveat that has to sit up front, one caveat before we start, one thing to flag up front, worth flagging up front, an important qualification first, a note on methodology before we get to the numbers, in one specific way, in a very specific sense, in one particular way, for one specific reason, there is a precise reason for this
 **Problem:** The writer announces that they are being careful, fair, or honest instead of being those things. Precision performed is not precision delivered: the distinction or caveat that follows lands harder without a preamble certifying its integrity, and often the preamble is the whole move with nothing behind it. Distinct from §29, which announces *what* is coming rather than how virtuously it is being done, and from §25, which weakens a claim rather than decorating it with the writer's good faith.
 **Rule:** Delete the announcement, keep what follows. If nothing substantive follows, cut the sentence. Never swap one certificate of honesty for a better-worded one.
 
@@ -431,6 +439,14 @@ A second shape belongs here: portentous shorthand, where a concrete fact the wri
 > One caveat that has to sit up front, because it makes the model comparison less clean than it looks. The two runs used different context windows.
 **After:**
 > The two runs used different context windows, so the two models are not being compared on equal terms.
+
+**Asserted specificity.** The adjectives *specific*, *particular*, *precise*, and *exact* get used as stand-ins for the specifics themselves: "they differ in one specific way", "there is a precise reason for this", "a very particular kind of failure". The word promises the detail while the sentence withholds it, and the reader waits a beat for something the writer could have said outright. When the detail does arrive in the next sentence, lead with it and drop the announcement; when it never arrives, the adjective was the whole content and it goes. This pairs with the significance stamp in §1 so often that the two arrive as one sentence: "in one specific way, and the way matters."
+**Before:**
+> The two runs differ in one specific way. The second used a larger context window.
+**After:**
+> The second run used a larger context window.
+
+(*Specific* is fine when the specifics are present: "the specific error is ENOSPC" names the error.)
 
 ### 37. Argument Residue
 
