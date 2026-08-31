@@ -12,7 +12,7 @@ description: |
   order rules.
 license: MIT
 metadata:
-  version: "2.12.3"
+  version: "2.12.4"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -66,6 +66,12 @@ When voice is appropriate, avoid uniform sentence structures, bloodless neutrali
 > One library retries the whole batch, the other only the failed rows.
 
 (A sentence that says something matters *and then says what follows from it* is doing real work. The tell is the bare stamp with nothing behind it.)
+
+**The graded verdict.** The same slot also rates evidence instead of showing it: "and it is pretty unambiguous", "and it is fairly damning", "and that is about as clear-cut as it gets". The clause passes judgment on a source the reader has not been shown, and the hedge in front of the absolute (*pretty* unambiguous, *fairly* conclusive) concedes that the verdict was not earned, because an absolute either holds or it does not. Give what the source says and let the reader grade it; where the wording is what makes it conclusive, quote the wording.
+**Before:**
+> A second internal email surfaced in August, and it is pretty unambiguous.
+**After:**
+> A second internal email surfaced in August: the VP wrote that the deadline had been "quietly dropped in June".
 
 ### 2. Undue Emphasis on Notability and Media Coverage
 
@@ -620,6 +626,14 @@ Phrases from other sections arrive calqued too. The commonest is §36's candor p
 > Toto treba povedať nahlas: register chráni údaje pred verejnosťou, nie pred štátom.
 **After:**
 > Register chráni údaje pred verejnosťou, nie pred štátom.
+
+§1's graded verdict arrives calqued too: **je dosť jednoznačné**, **je to pomerne jasné**, **hovorí samo za seba**, **nenecháva nikoho na pochybách**, hung on the end of a sentence that never says what the source said. The hedged absolute is the giveaway (dosť, pomerne, celkom, relatívne in front of jednoznačný, jasný, presvedčivý, zdrvujúci), not the word *dosť* by itself, which is ordinary Slovak and Czech.
+**Before:**
+> V auguste k tomu pribudlo priznanie z druhej strany a je dosť jednoznačné.
+**After:**
+> V auguste to priznala aj druhá strana: o prevode vedeli od začiatku.
+
+(The content of the admission has to come from the source. Where the text never says what was admitted, there is nothing to rate: cut the clause and leave the fact.)
 
 ### 50. Pronoun and possessive spam
 
