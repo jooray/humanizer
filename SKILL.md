@@ -12,7 +12,7 @@ description: |
   order rules.
 license: MIT
 metadata:
-  version: "2.12.4"
+  version: "2.12.5"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -616,11 +616,11 @@ The transgressive is archaic in modern Slovak and bookish in Czech; almost nobod
 
 ### 49. Calqued AI vocabulary
 
-The §7 list, loan-translated. Watch for: **kľúčový** (key), **zásadný / rozhodujúci** (crucial), **výrazne / významne** (significantly), **komplexný** (comprehensive, and frequently a mistranslation of "complex"), **robustný**, **dynamický**, **inovatívny**, **prelomový** (groundbreaking), **fascinujúci**, **pulzujúci / živý** (vibrant), **bohatý** in the figurative sense (rich), **rozmanitý** (diverse), **dychberúci** (breathtaking), **nachádza sa v srdci** (in the heart of), **svedčí o** (is a testament to), **zohráva kľúčovú úlohu** (plays a key role), **podčiarkuje význam** (underscores the importance), **v dnešnej dobe** (in today's world), **digitálna éra**, **neustále sa vyvíjajúci** (ever-evolving), **je dôležité poznamenať** (it is important to note), **treba zdôrazniť**, **v neposlednom rade** (last but not least), **nepopierateľne** (undeniably), **na mieru** (tailored), **poďme sa pozrieť** (let's take a look).
+The §7 list, loan-translated. Watch for: **kľúčový** (key), **zásadný / rozhodujúci** (crucial), **výrazne / významne** (significantly), **komplexný** (comprehensive, and frequently a mistranslation of "complex"), **robustný**, **dynamický**, **inovatívny**, **prelomový** (groundbreaking), **fascinujúci**, **pulzujúci / živý** (vibrant), **bohatý** in the figurative sense (rich), **rozmanitý** (diverse), **dychberúci** (breathtaking), **nachádza sa v srdci** (in the heart of), **svedčí o** (is a testament to), **zohráva kľúčovú úlohu** (plays a key role), **podčiarkuje význam** (underscores the importance), **v dnešnej dobe** (in today's world), **digitálna éra**, **neustále sa vyvíjajúci** (ever-evolving), **je dôležité poznamenať** (it is important to note), **treba zdôrazniť**, **v neposlednom rade** (last but not least), **nepopierateľne** (undeniably), **na mieru** (tailored), **dôvod veriť** (a reason to believe, the advertising RTB), **poďme sa pozrieť** (let's take a look).
 
 The §7 caveat holds and matters more here, because several of these are ordinary words in journalism and administrative writing. One "kľúčový" is nothing. Three in a paragraph, next to a "svedčí o" and a "v dnešnej dobe", is the tell.
 
-Phrases from other sections arrive calqued too. The commonest is §36's candor preamble: **treba to povedať nahlas**, **povedzme to nahlas**, **povedzme si to otvorene**, announcing that the next sentence is brave before delivering an ordinary claim. Cut the preamble and keep the claim.
+Phrases from other sections arrive calqued too. The commonest is §36's candor preamble: **treba to povedať nahlas**, **povedzme to nahlas**, **povedzme si to otvorene**, **buďme úprimní**, **buďte úprimní**, **úprimne povedané**, **povedzme si to na rovinu**, announcing that the next sentence is brave before delivering an ordinary claim. Cut the preamble and keep the claim.
 
 **Before:**
 > Toto treba povedať nahlas: register chráni údaje pred verejnosťou, nie pred štátom.
@@ -634,6 +634,14 @@ Phrases from other sections arrive calqued too. The commonest is §36's candor p
 > V auguste to priznala aj druhá strana: o prevode vedeli od začiatku.
 
 (The content of the admission has to come from the source. Where the text never says what was admitted, there is nothing to rate: cut the clause and leave the fact.)
+
+§11's staccato contrast and §10's triad arrive joined by commas inside one sentence instead of split into fragments: "nie bitcoin, nie Bitblik, nie protistranu", "žiadna burza, žiadna registrácia, ani e-mail", "bez účtu, bez e-mailu, bez identity". These languages carry the enumeration in one breath, so the period-delimited shape §11 looks for never appears and the run goes through untouched. Recasting it as another triad in a different negative frame ("bez bitcoinu, Bitbliku aj protistrany") changes nothing: cut the list to what the sentence needs, or say what the reader does see.
+**Before:**
+> Banka vidí len bežný výber z vášho účtu, nie bitcoin, nie Bitblik, nie protistranu.
+**After:**
+> Banka vidí bežný výber z účtu a nič viac.
+
+(Two negated items are ordinary, and negative concord is grammar, not a list: "nikto nikdy nič nepovedal" stays. The tell is three or more parallel negatives in one breath, usually all in the same frame.)
 
 ### 50. Pronoun and possessive spam
 
