@@ -12,7 +12,7 @@ description: |
   order rules.
 license: MIT
 metadata:
-  version: "2.12.5"
+  version: "2.12.6"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -151,7 +151,7 @@ When voice is appropriate, avoid uniform sentence structures, bloodless neutrali
 (For the Slovak and Czech equivalents, chiefly *predstavuje*, see §47.)
 
 ### 9. Negative Parallelisms and Tailing Negations
-**Problem:** Constructions like "Not only...but..." or "It's not just about..., it's..." are overused. So are clipped tailing-negation fragments such as "no guessing" or "no wasted motion" tacked onto the end of a sentence instead of written as a real clause.
+**Problem:** Constructions like "Not only...but..." or "It's not just about..., it's..." are overused. So are clipped tailing-negation fragments such as "no guessing" or "no wasted motion" tacked onto the end of a sentence instead of written as a real clause. So is the anaphoric negated run, the same negator repeated down a comma-joined list: "no signup, no tracking, no ads", "without accounts, without servers", "never sold, never shared", "not a framework, not a library". Two is already the advertising cadence; by three it is a slogan. The items are usually absences no reader expected in the first place, so the run says nothing while sounding like a promise.
 **Before:**
 > It's not just about the beat riding under the vocals; it's part of the aggression and atmosphere. It's not merely a song, it's a statement.
 **After:**
@@ -160,6 +160,14 @@ When voice is appropriate, avoid uniform sentence structures, bloodless neutrali
 > The options come from the selected item, no guessing.
 **After:**
 > The options come from the selected item without forcing the user to guess.
+**Before (anaphoric negated run):**
+> No signup, no tracking, no ads. Just the reader and the page.
+**After:**
+> You can read it without an account, and it carries no advertising.
+
+Recasting the run in another negative frame is not a fix. "Neither signup nor tracking", "no signup or tracking", "without signup or tracking" are the same list wearing a collar, and *neither...nor* adds a formality most drafts have not earned. Cut to the one absence the sentence actually needs, or drop the negation and say what the reader does get.
+
+(Negation is ordinary English. One "no" in a sentence is not the pattern, a quoted slogan stays as written, and a source's own enumeration of what is missing stays too. The tell is the repeated frame, not the word. For the same run comma-joined in Slovak and Czech, see §49.)
 
 ### 10. Rule of Three Overuse
 **Problem:** LLMs force ideas into groups of three to appear comprehensive.
@@ -174,6 +182,8 @@ When voice is appropriate, avoid uniform sentence structures, bloodless neutrali
 > SimpleX. Not Telegram. Not WhatsApp. Not Facebook. It's a different way to communicate.
 **After:**
 > SimpleX takes a different approach to privacy than Telegram or WhatsApp.
+
+(The comma-joined cousin, "no X, no Y, no Z", is §9.)
 
 ### 12. Elegant Variation and Repeated Sentence Openings
 **Problem:** Repetition penalties make the model handle recurrence by rule instead of by ear, and it fails in both directions. Either the same subject is renamed every time it appears, or several consecutive sentences open with the same subject (often *she* or *he*) because nothing pushed the shape to change.
@@ -635,7 +645,7 @@ Phrases from other sections arrive calqued too. The commonest is §36's candor p
 
 (The content of the admission has to come from the source. Where the text never says what was admitted, there is nothing to rate: cut the clause and leave the fact.)
 
-§11's staccato contrast and §10's triad arrive joined by commas inside one sentence instead of split into fragments: "nie bitcoin, nie Bitblik, nie protistranu", "žiadna burza, žiadna registrácia, ani e-mail", "bez účtu, bez e-mailu, bez identity". These languages carry the enumeration in one breath, so the period-delimited shape §11 looks for never appears and the run goes through untouched. Recasting it as another triad in a different negative frame ("bez bitcoinu, Bitbliku aj protistrany") changes nothing: cut the list to what the sentence needs, or say what the reader does see.
+§11's staccato contrast, §9's negated run and §10's triad arrive joined by commas inside one sentence instead of split into fragments: "nie bitcoin, nie Bitblik, nie protistranu", "žiadna burza, žiadna registrácia, ani e-mail", "bez účtu, bez e-mailu, bez identity". These languages carry the enumeration in one breath, so the period-delimited shape §11 looks for never appears and the run goes through untouched. Recasting it as another triad in a different negative frame ("bez bitcoinu, Bitbliku aj protistrany") changes nothing: cut the list to what the sentence needs, or say what the reader does see.
 **Before:**
 > Banka vidí len bežný výber z vášho účtu, nie bitcoin, nie Bitblik, nie protistranu.
 **After:**
