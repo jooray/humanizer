@@ -28,7 +28,7 @@ frontmatter = require(
     "SKILL.md must start with YAML frontmatter",
 ).group(1)
 
-for nonportable_key in ("compatibility:", "allowed-tools:"):
+for nonportable_key in ("version:", "compatibility:", "allowed-tools:"):
     if re.search(rf"(?m)^{re.escape(nonportable_key)}", frontmatter):
         raise SystemExit(f"Remove nonportable frontmatter key: {nonportable_key[:-1]}")
 
