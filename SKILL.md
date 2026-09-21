@@ -12,7 +12,7 @@ description: |
   order rules.
 license: MIT
 metadata:
-  version: "2.13.0"
+  version: "2.13.1"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -36,9 +36,11 @@ If the user provides a writing sample (their own previous writing), analyze it b
 
 1. Read the sample first. Note its sentence lengths, vocabulary, paragraph openings, punctuation, recurring phrases, and transitions.
 2. Match those habits instead of merely deleting AI patterns. Do not upgrade casual words or regularize deliberate quirks.
-3. Without a sample, use the default behavior below.
+3. Treat the sample as style evidence, not source material. Never import its facts, claims, examples, metaphors, or distinctive phrases into the rewrite unless they also appear in the text being edited.
+4. With several samples, prefer habits that recur naturally across them. Repeated opening formulas, section scaffolds, and closers are patterns to avoid, not voice to copy.
+5. Without a sample, use the default behavior below.
 
-A sample outranks this skill's style rules, including the em dash rule in §15: if the sample uses em dashes, keep them at roughly the sample's frequency. Matching the author beats scrubbing the tell.
+A sample outranks this skill's style rules, including the em dash rule in §15: if the sample uses em dashes, keep them at roughly the sample's frequency. It never outranks claim preservation or the no-fabrication rule. Matching the author beats scrubbing the tell.
 
 ## PERSONALITY AND SOUL
 
@@ -776,7 +778,7 @@ Invocation Modes above governs delivery format; this governs whether to rewrite 
 
 1. Read the input carefully and identify every instance of the patterns above.
 2. Write a **draft rewrite**. Check that it reads naturally aloud, varies sentence length, prefers specific details and simple constructions (is/are/has), and keeps the appropriate register.
-3. Ask two questions: **"What makes the below so obviously AI generated?"** and **"Does the rewrite state any fact, name, number, date, quote, citation, or ranking that isn't in the source, or drop a claim that was?"** Answer briefly. A fabrication is a defect even when it sounds more human than the vague original, and a lost claim is a defect even when the rewrite reads better without it. Shape rules delete claims most easily where the claim is carried by one word: §10 and §24 drop rankings and superlatives (*most*, *least*, *first*, *only*), and §14 and §41 drop assertions that things happened at once (*simultaneously*, *at once*, *both*). Check those words survived.
+3. Ask two questions: **"What makes the below so obviously AI generated?"** and **"Does the rewrite state any fact, name, number, date, quote, citation, or ranking that isn't in the source, or drop a claim that was?"** Answer briefly. A voice sample is not source material. A fabrication is a defect even when it sounds more human than the vague original, and a lost claim is a defect even when the rewrite reads better without it. Shape rules delete claims most easily where the claim is carried by one word: §10 and §24 drop rankings and superlatives (*most*, *least*, *first*, *only*), and §14 and §41 drop assertions that things happened at once (*simultaneously*, *at once*, *both*). Check those words survived.
 4. Revise into a **final rewrite** that addresses them and contains no em or en dashes (see §15, and §46 if the text is Slovak or Czech).
 
 In pasted-text mode, deliver the draft, the brief "still-AI" bullets, the final rewrite, and (optionally) a short summary of changes. In file and embedded modes, run the same loop but deliver only what the mode calls for (see Invocation Modes).
