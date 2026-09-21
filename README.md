@@ -243,6 +243,22 @@ The section also carries its own false-positive list: the reflexive passive, lon
 >
 > I would go back, but in spring and with better shoes. Lisbon does not bend over backward to make things easy for you. I think I liked that, even when my legs disagreed.
 
+## Forensic Residue Cleanup
+
+An optional tool for drafts on disk. It is not part of the skill: `SKILL.md` never mentions it, and the skill works exactly the same without it.
+
+It covers pattern #40 and nothing else, because #40 is the only pattern with no editorial judgment in it. Machine citation tokens, a `utm_source` naming a chatbot, a zero-width space, a Cyrillic *o* sitting inside an English word: each one is wrong on sight, and a script sees the invisible ones that a reader and a model both miss. Everything that needs a judgment call stays with the skill.
+
+```bash
+python3 scripts/forensic_residue.py draft.md          # report, with line and column
+python3 scripts/forensic_residue.py --json draft.md   # machine-readable
+python3 scripts/forensic_residue.py --fix draft.md    # remove what is safe to remove
+```
+
+Exit status is `0` when nothing is left to fix, `1` when findings remain, `2` for invalid input. Frontmatter, fenced and indented code, inline code, HTML comments, block quotes, and image payloads are excluded, so a document that *documents* residue stays intact; URL cleanup still reaches link destinations. Unfilled templates (`[Your Name]`, `[insert date]`) are reported but never rewritten, and `--fix` leaves prose, punctuation and structure alone. Writes are atomic, keep the file mode and the original line endings, and refuse symlinks.
+
+Two characters are deliberately left alone: a non-breaking space, because Slovak and Czech typography uses it correctly after one-letter prepositions, and a zero-width joiner between non-Latin characters, because emoji sequences and Persian and Indic text need it.
+
 ## References
 
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) - Primary source

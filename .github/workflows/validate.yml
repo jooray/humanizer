@@ -21,6 +21,8 @@ jobs:
           python-version: "3.12"
       - name: Validate synchronized package metadata
         run: python3 scripts/validate-package.py
+      - name: Test the forensic residue cleanup
+        run: python3 -m unittest scripts/test_forensic_residue.py
       - name: Verify Agent Skills discovery
         run: npx --yes skills@1.5.20 add . --list
       - name: Validate Claude Code marketplace

@@ -51,6 +51,13 @@ if SKILL_PATH.is_symlink() or skill_files != {Path("SKILL.md")}:
 if PLUGIN.get("skills") != ["./"]:
     raise SystemExit('plugin.json must set "skills": ["./"] for Claude plugin discovery')
 
+for companion in ("forensic_residue.py", "test_forensic_residue.py"):
+    path = ROOT / "scripts" / companion
+    if path.is_symlink() or not path.is_file():
+        raise SystemExit(f"Missing regular file: scripts/{companion}")
+if "scripts/" in SKILL:
+    raise SystemExit("SKILL.md must not reference scripts/; the prompt has to ship as one file")
+
 pattern_numbers = [
     int(number)
     for number in re.findall(r"(?m)^### ([0-9]+)\. ", SKILL)
