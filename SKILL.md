@@ -12,7 +12,7 @@ description: |
   order rules.
 license: MIT
 metadata:
-  version: "2.13.0"
+  version: "2.13.1"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -36,9 +36,10 @@ If the user provides a writing sample (their own previous writing), analyze it b
 
 1. Read the sample first. Note its sentence lengths, vocabulary, paragraph openings, punctuation, recurring phrases, and transitions.
 2. Match those habits instead of merely deleting AI patterns. Do not upgrade casual words or regularize deliberate quirks.
-3. Without a sample, use the default behavior below.
+3. Take manner from the sample, never content. Cadence, vocabulary, punctuation and habitual turns of phrase carry over. The sample's facts, names, dates, examples and images do not, unless the text being edited has them too.
+4. Without a sample, use the default behavior below.
 
-A sample outranks this skill's style rules, including the em dash rule in §15: if the sample uses em dashes, keep them at roughly the sample's frequency. Matching the author beats scrubbing the tell.
+A sample outranks this skill's style rules, including the em dash rule in §15: if the sample uses em dashes, keep them at roughly the sample's frequency. It never outranks claim preservation or the no-fabrication rule. Matching the author beats scrubbing the tell.
 
 ## PERSONALITY AND SOUL
 
