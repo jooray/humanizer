@@ -4,6 +4,20 @@
 
 A portable agent skill that removes signs of AI-generated writing from text, making it sound more natural and human. It is plain Markdown, so it can run in any harness that supports skill-style instructions.
 
+<!-- jooray-links:start -->
+### More from me
+
+**Related projects**
+
+- [night-agent](https://github.com/jooray/night-agent): bounded, unattended Claude Code and OpenCode maintenance runs
+- [hermes-firewall](https://github.com/jooray/hermes-firewall): prompt-injection gate for Hermes Agent
+- [tmux-wake](https://github.com/jooray/tmux-wake): wake coding agents in tmux or Herdr after an API usage limit resets
+
+**Full project showcase:** [Humanizer in my project showcase](https://juraj.bednar.io/showcase/#AI-06), or [all my projects](https://juraj.bednar.io/showcase/).
+
+I write about building things on [my blog](https://juraj.bednar.io/en/blog-en/). I also wrote a cypherpunk novel, [Tamers of Entropy](https://tamersofentropy.net/), and there is a [trailer](https://tamersofentropy.net/#trailer).
+<!-- jooray-links:end -->
+
 ## Installation
 
 ### Skills CLI
