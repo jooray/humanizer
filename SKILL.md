@@ -12,7 +12,7 @@ description: |
   order rules.
 license: MIT
 metadata:
-  version: "2.13.1"
+  version: "2.14.0"
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -598,7 +598,7 @@ The tell here is the wrong pair: English “…”, French «…», or a documen
 
 Slovak and Czech typography has no em dash. The native parenthetical dash is the pomlčka, an en dash (–) with a space on each side. An em dash (—) is therefore a stronger signal here than in English, because no native writer, editor, or style guide puts one there: it arrives only through an English draft. Cut every one, using §15's preference order (period, comma, colon, parentheses, restructure).
 
-The en dash is a different character doing a different job, and §15's ban on it does **not** carry over. Leave it alone in ranges written without a preposition (55–85 €, 2026–2028, 8:00–17:00) and in pairings of proper nouns (zápas Slovensko–Česko, trasa Bratislava–Košice). Rewriting a range with "až" is also correct and often reads better in dense prose, but that is a sentence-level judgment, not a search and replace.
+The en dash is a different character doing a different job, and §15's ban on it does **not** carry over. Leave it alone in ranges written without a preposition and in pairings of proper nouns, with the spacing the language wants. Slovak spaces the pomlčka everywhere, ranges included (PSP 2.8: the dash takes spaces, the hyphen does not): 55 – 85 €, 2026 – 2028, 8:00 – 17:00, trasa Bratislava – Košice. A closed-up range (55–85 €) in Slovak is English typography that survived translation. Czech closes it up between single words and numbers (55–85 €, Praha–Brno). An approximation is not a range: Slovak "2-3 dni" or "dva-tri týždne" (about two or three) takes a hyphen without spaces (PSP 2.9). Rewriting a range with "až" is also correct and often reads better in dense prose, but that is a sentence-level judgment, not a search and replace.
 
 Leave the minus sign (−, U+2212) alone wherever it belongs to a symbol rather than prose: ratings such as A− and BBB−, temperatures, negative numbers. It is not a dash.
 
@@ -607,7 +607,7 @@ A spaced en dash as a parenthetical is grammatically correct, but keeping a dash
 **Before:**
 > Ak už máš trvalý pobyt — a plníš mesačné povinnosti — nič z toho nie je tvoj problém. ADAC pýta 55—85 €.
 **After:**
-> Ak už máš trvalý pobyt a plníš mesačné povinnosti, nič z toho nie je tvoj problém. ADAC pýta 55–85 €.
+> Ak už máš trvalý pobyt a plníš mesačné povinnosti, nič z toho nie je tvoj problém. ADAC pýta 55 – 85 €.
 
 ### 47. Copula avoidance, Slovak and Czech edition
 
@@ -643,6 +643,10 @@ The §7 list, loan-translated. Watch for: **kľúčový** (key), **zásadný / r
 
 The §7 caveat holds and matters more here, because several of these are ordinary words in journalism and administrative writing. One "kľúčový" is nothing. Three in a paragraph, next to a "svedčí o" and a "v dnešnej dobe", is the tell.
 
+Two Slovak calques are wrong outright, not merely stale (Czech *obdržet* and purpose *pro* are standard, so this is Slovak only). **Obdržať** for "receive" is substandard (KSSJ): "Vašu objednávku sme dostali", not "Obdržali sme vašu objednávku"; *dostať* or *prijať*. **Pre** + verbal noun for purpose ("pre zobrazenie", "pre pokračovanie kliknite sem") maps every English "for" and "to" onto one preposition, while Slovak expresses purpose regularly with *na* (KSSJ) or with a clause: "Ak chcete pokračovať, kliknite sem." *Pre* stays for a beneficiary or scope: pre zákazníkov, pre všetky krajiny.
+
+English "Please" and "Sorry" come through as **prosím** and **ľutujeme** in front of every instruction: "Prosím, skúste to znova", "Ľutujeme, ale súbor sa nenahral". The *vy* imperative is already polite: "Skúste to znova." Keep *prosím* for a real favour or a wait ("Počkajte, prosím.") and the apology for a failure the reader actually suffers.
+
 Phrases from other sections arrive calqued too. The commonest is §36's candor preamble: **treba to povedať nahlas**, **povedzme to nahlas**, **povedzme si to otvorene**, **buďme úprimní**, **buďte úprimní**, **úprimne povedané**, **povedzme si to na rovinu**, announcing that the next sentence is brave before delivering an ordinary claim. Cut the preamble and keep the claim.
 
 **Before:**
@@ -675,6 +679,8 @@ Slovak and Czech are pro-drop: the verb ending carries the person, so a spelled-
 **After:**
 > Keď si otváraš účet, banka bude pýtať doklad o adrese. Maj ho pripravený.
 
+Swapping every *váš* or *tvoj* for *svoj* is not the fix: "Skontrolujte svoj e-mail a kliknite na odkaz vo svojej správe" is grammatical and still reads translated. Drop the possessive, or let the reflexive *si* carry ownership with verbs of checking, viewing, and keeping: "Skontrolujte si e-mail a kliknite na odkaz v správe." Keep *svoj* only where leaving it out makes the owner ambiguous.
+
 ### 51. English word order carried through translation
 
 These languages use word order to mark what is old and what is new: given information near the front, the new point at the end. English does that job with articles and stress and keeps a fixed subject-verb-object order. Generated text keeps the English order, so the new information lands first and every paragraph finishes flat. The symptom is a run of sentences that all start with their subject and all end on something the reader already knew.
@@ -692,7 +698,8 @@ Generated text slides between the informal *ty* and the formal *vy*, sometimes i
 
 Not style judgments, just rules a translated draft routinely breaks. Fix them on sight:
 
-- Percent signs, currencies, and units take a space, ideally non-breaking: 10 %, 33 USD, 160 GB. Closing it up ("10%") is correct only in an attributive compound (Slovak "10%-ný", Czech "10%ní").
+- Percent signs, currencies, and units take a space, ideally non-breaking: 10 %, 33 USD, 160 GB. Closing it up is correct only in the Czech attributive compound ("10%ní"). Slovak writes that adjective with a hyphen and the word: 10-percentná zľava, 19-percentná daň (SSSJ), never "10%-ný".
+- Slovak joins digits to letters with a hyphen (PSP 2.9): 25-krát, 45-ročný, 10-násobok. A translated draft writes "25 krát", and with the space *krát* becomes the multiplication word.
 - Decimal comma, space as the thousands separator: 5 970, 0,7 %, 1,2 milióna. Not 5,970 and not 0.7%.
 - Dates take an ordinal period and a genitive lowercase month: 6. júla 2026, Czech 6. července 2026. Not "6 Júl 2026" and not "July 6, 2026".
 - Months, weekdays, nationality adjectives, and language names are lowercase: júl, pondelok, slovenský, španielčina. Capitals on any of these are an English habit that survived translation.
